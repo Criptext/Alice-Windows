@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\http">
+      <UniqueIdentifier>{260ff9ca-f3eb-4f25-9cd1-4eeee53cfa83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\db">
+      <UniqueIdentifier>{0ddad198-0455-44ff-8f23-986264bb635e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\db\axolotl">
+      <UniqueIdentifier>{09e82d98-5b1e-4c14-84b7-0faee0853362}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\db\model">
+      <UniqueIdentifier>{17f20edf-9a69-4249-a04a-851cbcb4145d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\http\handlers">
+      <UniqueIdentifier>{fac6559a-7e39-46e3-8cfa-09b5d2907e10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\helpers">
+      <UniqueIdentifier>{aef9b5df-e8ff-4b47-a91a-f2b5cd5acb51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto">
+      <UniqueIdentifier>{a5d096bb-7e5c-43e4-994a-2daed2d69268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto\protocol_store">
+      <UniqueIdentifier>{d1cd5688-ca00-4f5c-b382-3139039c4d63}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Alice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="http.cpp">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="Account.cpp">
+      <Filter>Source Files\db\model</Filter>
+    </ClCompile>
+    <ClCompile Include="IdentityKey.cpp">
+      <Filter>Source Files\db\axolotl</Filter>
+    </ClCompile>
+    <ClCompile Include="PreKey.cpp">
+      <Filter>Source Files\db\axolotl</Filter>
+    </ClCompile>
+    <ClCompile Include="SessionRecord.cpp">
+      <Filter>Source Files\db\axolotl</Filter>
+    </ClCompile>
+    <ClCompile Include="SignedPreKey.cpp">
+      <Filter>Source Files\db\axolotl</Filter>
+    </ClCompile>
+    <ClCompile Include="cors.cpp">
+      <Filter>Source Files\http\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="decrypt.cpp">
+      <Filter>Source Files\http\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="encrypt.cpp">
+      <Filter>Source Files\http\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="helpers.cpp">
+      <Filter>Source Files\http\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="keyBundle.cpp">
+      <Filter>Source Files\http\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="utf8.c">
+      <Filter>Source Files\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="base64.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="signal.cpp">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="store.cpp">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="decode_utils.cpp">
+      <Filter>Source Files\crypto\protocol_store</Filter>
+    </ClCompile>
+    <ClCompile Include="IdentityKeyStore.cpp">
+      <Filter>Source Files\crypto\protocol_store</Filter>
+    </ClCompile>
+    <ClCompile Include="PreKeyStore.cpp">
+      <Filter>Source Files\crypto\protocol_store</Filter>
+    </ClCompile>
+    <ClCompile Include="SessionStore.cpp">
+      <Filter>Source Files\crypto\protocol_store</Filter>
+    </ClCompile>
+    <ClCompile Include="SignedPreKeyStore.cpp">
+      <Filter>Source Files\crypto\protocol_store</Filter>
+    </ClCompile>
+    <ClCompile Include="cJSON.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="http.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="Account.h">
+      <Filter>Source Files\db\model</Filter>
+    </ClInclude>
+    <ClInclude Include="IdentityKey.h">
+      <Filter>Source Files\db\axolotl</Filter>
+    </ClInclude>
+    <ClInclude Include="PreKey.h">
+      <Filter>Source Files\db\axolotl</Filter>
+    </ClInclude>
+    <ClInclude Include="SessionRecord.h">
+      <Filter>Source Files\db\axolotl</Filter>
+    </ClInclude>
+    <ClInclude Include="SignedPreKey.h">
+      <Filter>Source Files\db\axolotl</Filter>
+    </ClInclude>
+    <ClInclude Include="cors.h">
+      <Filter>Source Files\http\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="decrypt.h">
+      <Filter>Source Files\http\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="encrypt.h">
+      <Filter>Source Files\http\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="helpers.h">
+      <Filter>Source Files\http\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="keyBundle.h">
+      <Filter>Source Files\http\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="utf8.h">
+      <Filter>Source Files\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="base64.h">
+      <Filter>Source Files\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto.h">
+      <Filter>Source Files\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="signal.h">
+      <Filter>Source Files\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="store.h">
+      <Filter>Source Files\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="uthash.h">
+      <Filter>Source Files\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="decode_utils.h">
+      <Filter>Source Files\crypto\protocol_store</Filter>
+    </ClInclude>
+    <ClInclude Include="IdentityKeyStore.h">
+      <Filter>Source Files\crypto\protocol_store</Filter>
+    </ClInclude>
+    <ClInclude Include="PreKeyStore.h">
+      <Filter>Source Files\crypto\protocol_store</Filter>
+    </ClInclude>
+    <ClInclude Include="SessionStore.h">
+      <Filter>Source Files\crypto\protocol_store</Filter>
+    </ClInclude>
+    <ClInclude Include="SignedPreKeyStore.h">
+      <Filter>Source Files\crypto\protocol_store</Filter>
+    </ClInclude>
+    <ClInclude Include="types.h">
+      <Filter>Source Files\crypto\protocol_store</Filter>
+    </ClInclude>
+    <ClInclude Include="cJSON.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

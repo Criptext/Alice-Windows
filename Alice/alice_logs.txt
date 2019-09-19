@@ -1,0 +1,300 @@
+[2019-09-16 17:52:48.895] [Alice Logs] [info] Starting Service
+[2019-09-16 17:52:48.897] [Alice Logs] [info] No db path argument passed
+[2019-09-16 17:56:13.135] [Alice Logs] [info] Starting Service
+[2019-09-16 17:56:13.138] [Alice Logs] [info] DB PATH: Criptext.db
+[2019-09-16 17:56:13.138] [Alice Logs] [info] PORT : 8085
+[2019-09-16 18:09:35.184] [Alice Logs] [info] Starting Service
+[2019-09-16 18:09:35.187] [Alice Logs] [info] DB PATH: Criptext.db
+[2019-09-16 18:09:35.187] [Alice Logs] [info] PORT : 8085
+[2019-09-17 14:43:58.503] [Alice Logs] [info] Starting Service
+[2019-09-17 14:43:58.675] [Alice Logs] [info] DB PATH: Criptext.db
+[2019-09-17 14:43:58.675] [Alice Logs] [info] PORT : 8085
+[2019-09-17 15:12:21.018] [Alice Logs] [info] Starting Service
+[2019-09-17 15:12:21.023] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 15:12:21.023] [Alice Logs] [info] PORT : 8085
+[2019-09-17 15:21:56.261] [Alice Logs] [info] Starting Service
+[2019-09-17 15:21:56.271] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 15:21:56.271] [Alice Logs] [info] PORT : 8085
+[2019-09-17 15:23:19.155] [Alice Logs] [info] Starting Service
+[2019-09-17 15:23:19.158] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 15:23:19.158] [Alice Logs] [info] PORT : 8085
+[2019-09-17 15:27:15.334] [Alice Logs] [info] Starting Service
+[2019-09-17 15:27:15.336] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 15:27:15.336] [Alice Logs] [info] PORT : 8085
+[2019-09-17 15:28:40.040] [Alice Logs] [info] Starting Service
+[2019-09-17 15:28:40.043] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 15:28:40.043] [Alice Logs] [info] PORT : 8085
+[2019-09-17 15:40:23.482] [Alice Logs] [info] Starting Service
+[2019-09-17 15:40:23.485] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 15:40:23.485] [Alice Logs] [info] PORT : 8085
+[2019-09-17 15:49:54.677] [Alice Logs] [info] Starting Service
+[2019-09-17 15:49:54.679] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 15:49:54.679] [Alice Logs] [info] PORT : 8085
+[2019-09-17 15:53:59.801] [Alice Logs] [info] Starting Service
+[2019-09-17 15:53:59.803] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 15:53:59.803] [Alice Logs] [info] PORT : 8085
+[2019-09-17 15:58:08.816] [Alice Logs] [info] Starting Service
+[2019-09-17 15:58:08.819] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 15:58:08.819] [Alice Logs] [info] PORT : 8085
+[2019-09-17 15:58:36.405] [Alice Logs] [info] [41] /decrypt Receiving Request
+[2019-09-17 15:58:36.409] [Alice Logs] [info] [41] Request -> <RecipientId: pedro, senderId: posi, EmailKey: 7737>
+[2019-09-17 15:59:08.764] [Alice Logs] [info] Starting Service
+[2019-09-17 15:59:08.770] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 15:59:08.770] [Alice Logs] [info] PORT : 8085
+[2019-09-17 16:01:11.877] [Alice Logs] [info] Starting Service
+[2019-09-17 16:01:11.880] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 16:01:11.880] [Alice Logs] [info] PORT : 8085
+[2019-09-17 16:08:01.790] [Alice Logs] [info] [18467] /decrypt Receiving Request
+[2019-09-17 16:08:01.792] [Alice Logs] [info] [18467] Request -> <RecipientId: pedro, senderId: posi, EmailKey: 7739>
+[2019-09-17 16:12:15.051] [Alice Logs] [info] Starting Service
+[2019-09-17 16:12:15.054] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 16:12:15.054] [Alice Logs] [info] PORT : 8085
+[2019-09-17 16:15:20.562] [Alice Logs] [info] Starting Service
+[2019-09-17 16:15:20.565] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 16:15:20.565] [Alice Logs] [info] PORT : 8085
+[2019-09-17 16:15:46.724] [Alice Logs] [info] [41] /decrypt Receiving Request
+[2019-09-17 16:15:49.490] [Alice Logs] [info] [41] /decrypt Receiving Request
+[2019-09-17 16:31:45.276] [Alice Logs] [info] Starting Service
+[2019-09-17 16:31:45.278] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 16:31:45.278] [Alice Logs] [info] PORT : 8085
+[2019-09-17 16:33:09.523] [Alice Logs] [info] [18467] /decrypt Receiving Request
+[2019-09-17 16:33:09.527] [Alice Logs] [info] [18467] Request -> <RecipientId: pedro, senderId: jorge, EmailKey: 7742>
+[2019-09-17 16:33:35.800] [Alice Logs] [info] [18467] Successful response
+[2019-09-17 16:35:03.795] [Alice Logs] [info] [6334] /decrypt Receiving Request
+[2019-09-17 16:37:27.711] [Alice Logs] [info] Starting Service
+[2019-09-17 16:37:27.713] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 16:37:27.713] [Alice Logs] [info] PORT : 8085
+[2019-09-17 16:40:22.352] [Alice Logs] [info] Starting Service
+[2019-09-17 16:40:22.354] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 16:40:22.354] [Alice Logs] [info] PORT : 8085
+[2019-09-17 16:48:13.295] [Alice Logs] [info] Starting Service
+[2019-09-17 16:48:13.298] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 16:48:13.298] [Alice Logs] [info] PORT : 8085
+[2019-09-17 16:48:53.718] [Alice Logs] [info] [41] /decrypt Receiving Request
+[2019-09-17 16:48:53.720] [Alice Logs] [info] [41] Request -> <RecipientId: pedro, senderId: posi, EmailKey: 7746>
+[2019-09-17 16:49:03.640] [Alice Logs] [info] [41] Successful response
+[2019-09-17 16:50:32.920] [Alice Logs] [info] Starting Service
+[2019-09-17 16:50:32.923] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 16:50:32.923] [Alice Logs] [info] PORT : 8085
+[2019-09-17 16:50:58.599] [Alice Logs] [info] [41] /decrypt Receiving Request
+[2019-09-17 16:50:58.601] [Alice Logs] [info] [41] Request -> <RecipientId: pedro, senderId: posi, EmailKey: 7748>
+[2019-09-17 16:51:04.713] [Alice Logs] [info] [41] Successful response
+[2019-09-17 16:52:02.220] [Alice Logs] [info] [18467] /decrypt Receiving Request
+[2019-09-17 16:52:02.225] [Alice Logs] [info] [18467] Request -> <RecipientId: pedro, senderId: posi, EmailKey: 7749>
+[2019-09-17 16:52:08.338] [Alice Logs] [info] [18467] Successful response
+[2019-09-17 16:52:31.327] [Alice Logs] [info] [6334] /decrypt Receiving Request
+[2019-09-17 16:52:31.331] [Alice Logs] [info] [6334] Request -> <RecipientId: pedro, senderId: posi, EmailKey: 7750>
+[2019-09-17 16:52:31.484] [Alice Logs] [info] [6334] Successful response
+[2019-09-17 16:54:44.977] [Alice Logs] [info] [26500] /decrypt Receiving Request
+[2019-09-17 16:54:44.981] [Alice Logs] [info] [26500] Request -> <RecipientId: pedro, senderId: posi, EmailKey: 7751>
+[2019-09-17 16:54:45.158] [Alice Logs] [info] [26500] Successful response
+[2019-09-17 16:56:06.039] [Alice Logs] [info] Starting Service
+[2019-09-17 16:56:06.041] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 16:56:06.041] [Alice Logs] [info] PORT : 8085
+[2019-09-17 16:58:09.450] [Alice Logs] [info] Starting Service
+[2019-09-17 16:58:09.457] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 16:58:09.457] [Alice Logs] [info] PORT : 8085
+[2019-09-17 16:58:21.157] [Alice Logs] [info] [41] /decrypt Receiving Request
+[2019-09-17 16:58:21.160] [Alice Logs] [info] [41] Request -> <RecipientId: pedro, senderId: posi, EmailKey: 7754>
+[2019-09-17 16:58:21.424] [Alice Logs] [info] [41] Successful response
+[2019-09-17 16:59:43.939] [Alice Logs] [info] Starting Service
+[2019-09-17 16:59:43.941] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-17 16:59:43.941] [Alice Logs] [info] PORT : 8085
+[2019-09-17 17:00:38.000] [Alice Logs] [info] [41] /decrypt Receiving Request
+[2019-09-17 17:00:38.002] [Alice Logs] [info] [41] Request -> <RecipientId: pedro, senderId: posi, EmailKey: 7756>
+[2019-09-17 17:00:38.254] [Alice Logs] [info] [41] Successful response
+[2019-09-18 10:29:37.446] [Alice Logs] [info] Starting Service
+[2019-09-18 10:29:37.449] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-18 10:29:37.449] [Alice Logs] [info] PORT : 8085
+[2019-09-18 10:30:46.290] [Alice Logs] [info] Starting Service
+[2019-09-18 10:30:46.296] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-18 10:30:46.296] [Alice Logs] [info] PORT : 8085
+[2019-09-18 10:43:16.832] [Alice Logs] [info] Starting Service
+[2019-09-18 10:43:16.843] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-18 10:43:16.843] [Alice Logs] [info] PORT : 8085
+[2019-09-18 11:01:54.024] [Alice Logs] [info] Starting Service
+[2019-09-18 11:01:54.029] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-18 11:01:54.029] [Alice Logs] [info] PORT : 8085
+[2019-09-18 11:02:13.268] [Alice Logs] [info] [41] /encrypt/email Receiving Request
+[2019-09-18 11:02:13.268] [Alice Logs] [error] [41] Not a json object: ннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннн
+[2019-09-18 11:02:13.324] [Alice Logs] [info] [18467] /encrypt/email Receiving Request
+[2019-09-18 11:02:13.324] [Alice Logs] [error] [18467] Not a json object: нннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннн
+[2019-09-18 11:02:27.596] [Alice Logs] [info] [6334] /encrypt/email Receiving Request
+[2019-09-18 11:02:27.596] [Alice Logs] [error] [6334] Not a json object: ннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннн
+[2019-09-18 11:02:27.650] [Alice Logs] [info] [26500] /encrypt/email Receiving Request
+[2019-09-18 11:02:27.650] [Alice Logs] [error] [26500] Not a json object: нннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннн
+[2019-09-18 11:02:43.323] [Alice Logs] [info] [19169] /encrypt/email Receiving Request
+[2019-09-18 11:02:43.323] [Alice Logs] [error] [19169] Not a json object: нннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннн
+[2019-09-18 11:02:43.376] [Alice Logs] [info] [15724] /encrypt/email Receiving Request
+[2019-09-18 11:02:43.377] [Alice Logs] [error] [15724] Not a json object: нннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннн
+[2019-09-18 11:04:27.854] [Alice Logs] [info] Starting Service
+[2019-09-18 11:04:27.863] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-18 11:04:27.863] [Alice Logs] [info] PORT : 8085
+[2019-09-18 11:17:39.615] [Alice Logs] [info] Starting Service
+[2019-09-18 11:17:39.617] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-18 11:17:39.618] [Alice Logs] [info] PORT : 8085
+[2019-09-18 11:19:01.580] [Alice Logs] [info] Starting Service
+[2019-09-18 11:19:01.582] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-18 11:19:01.582] [Alice Logs] [info] PORT : 8085
+[2019-09-18 11:19:15.067] [Alice Logs] [info] [41] /encrypt/email Receiving Request
+[2019-09-18 11:19:15.067] [Alice Logs] [info] [41] /encrypt/email Receiving Request
+[2019-09-18 11:19:15.067] [Alice Logs] [info] [41] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:19:15.067] [Alice Logs] [info] [41] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:19:15.516] [Alice Logs] [info] [41] Successful response
+[2019-09-18 11:19:15.527] [Alice Logs] [info] [41] /encrypt/email Receiving Request
+[2019-09-18 11:19:15.527] [Alice Logs] [info] [41] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:19:15.660] [Alice Logs] [info] [41] Successful response
+[2019-09-18 11:19:15.966] [Alice Logs] [info] [18467] /encrypt/email Receiving Request
+[2019-09-18 11:19:15.966] [Alice Logs] [info] [18467] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:19:16.016] [Alice Logs] [info] [41] Successful response
+[2019-09-18 11:19:16.295] [Alice Logs] [info] [18467] Successful response
+[2019-09-18 11:19:16.324] [Alice Logs] [info] [6334] /encrypt/email Receiving Request
+[2019-09-18 11:19:16.324] [Alice Logs] [info] [6334] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:19:16.601] [Alice Logs] [info] [18467] /encrypt/email Receiving Request
+[2019-09-18 11:19:16.601] [Alice Logs] [info] [18467] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:19:16.727] [Alice Logs] [info] [6334] Successful response
+[2019-09-18 11:19:17.032] [Alice Logs] [info] [26500] /encrypt/email Receiving Request
+[2019-09-18 11:19:17.032] [Alice Logs] [info] [26500] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:19:17.039] [Alice Logs] [info] [18467] Successful response
+[2019-09-18 11:19:17.327] [Alice Logs] [info] [26500] Successful response
+[2019-09-18 11:19:17.347] [Alice Logs] [info] [19169] /encrypt/email Receiving Request
+[2019-09-18 11:19:17.347] [Alice Logs] [info] [19169] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:19:17.633] [Alice Logs] [info] [6334] /encrypt/email Receiving Request
+[2019-09-18 11:19:17.633] [Alice Logs] [info] [6334] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:19:17.694] [Alice Logs] [info] [19169] Successful response
+[2019-09-18 11:19:18.000] [Alice Logs] [info] [15724] /encrypt/email Receiving Request
+[2019-09-18 11:19:18.000] [Alice Logs] [info] [15724] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:19:18.062] [Alice Logs] [info] [6334] Successful response
+[2019-09-18 11:19:18.372] [Alice Logs] [info] [15724] Successful response
+[2019-09-18 11:19:18.372] [Alice Logs] [info] [26500] /encrypt/email Receiving Request
+[2019-09-18 11:19:18.372] [Alice Logs] [info] [26500] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:19:18.726] [Alice Logs] [info] [26500] Successful response
+[2019-09-18 11:22:13.119] [Alice Logs] [info] Starting Service
+[2019-09-18 11:22:13.126] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-09-18 11:22:13.126] [Alice Logs] [info] PORT : 8085
+[2019-09-18 11:22:25.620] [Alice Logs] [info] [41] /decrypt Receiving Request
+[2019-09-18 11:22:25.623] [Alice Logs] [info] [41] Request -> <RecipientId: pedro, senderId: jorge, EmailKey: 7759>
+[2019-09-18 11:22:25.814] [Alice Logs] [info] [41] Successful response
+[2019-09-18 11:30:28.437] [Alice Logs] [info] [18467] /decrypt Receiving Request
+[2019-09-18 11:30:28.446] [Alice Logs] [info] [18467] Request -> <RecipientId: pedro, senderId: bob, EmailKey: 7760>
+[2019-09-18 11:30:29.102] [Alice Logs] [info] [18467] Successful response
+[2019-09-18 11:32:48.897] [Alice Logs] [info] [6334] /decrypt Receiving Request
+[2019-09-18 11:32:48.907] [Alice Logs] [info] [6334] Request -> <RecipientId: pedro, senderId: bob, EmailKey: 7761>
+[2019-09-18 11:32:49.405] [Alice Logs] [info] [6334] Successful response
+[2019-09-18 11:34:51.880] [Alice Logs] [info] [26500] /decrypt Receiving Request
+[2019-09-18 11:34:51.891] [Alice Logs] [info] [26500] Request -> <RecipientId: pedro, senderId: bob, EmailKey: 7762>
+[2019-09-18 11:34:52.338] [Alice Logs] [info] [26500] Successful response
+[2019-09-18 11:54:46.713] [Alice Logs] [info] [41] /encrypt/email Receiving Request
+[2019-09-18 11:54:46.713] [Alice Logs] [info] [41] Request -> <accountId: pedro, recipientId: posi>
+[2019-09-18 11:54:46.994] [Alice Logs] [info] [41] Successful response
+[2019-09-18 11:54:47.017] [Alice Logs] [info] [19169] /encrypt/email Receiving Request
+[2019-09-18 11:54:47.017] [Alice Logs] [info] [19169] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:54:47.019] [Alice Logs] [info] [18467] /encrypt/email Receiving Request
+[2019-09-18 11:54:47.019] [Alice Logs] [info] [18467] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:54:47.299] [Alice Logs] [info] [41] /encrypt/email Receiving Request
+[2019-09-18 11:54:47.299] [Alice Logs] [info] [41] Request -> <accountId: pedro, recipientId: posi>
+[2019-09-18 11:54:47.583] [Alice Logs] [info] [19169] Successful response
+[2019-09-18 11:54:47.840] [Alice Logs] [info] [18467] Successful response
+[2019-09-18 11:54:47.889] [Alice Logs] [info] [15724] /encrypt/email Receiving Request
+[2019-09-18 11:54:47.889] [Alice Logs] [info] [15724] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:54:47.993] [Alice Logs] [info] [41] Successful response
+[2019-09-18 11:54:48.146] [Alice Logs] [info] [6334] /encrypt/email Receiving Request
+[2019-09-18 11:54:48.146] [Alice Logs] [info] [6334] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:54:48.299] [Alice Logs] [info] [18467] /encrypt/email Receiving Request
+[2019-09-18 11:54:48.299] [Alice Logs] [info] [18467] Request -> <accountId: pedro, recipientId: posi>
+[2019-09-18 11:54:48.305] [Alice Logs] [info] [15724] Successful response
+[2019-09-18 11:54:48.611] [Alice Logs] [info] [11478] /encrypt/email Receiving Request
+[2019-09-18 11:54:48.611] [Alice Logs] [info] [11478] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:54:48.716] [Alice Logs] [info] [6334] Successful response
+[2019-09-18 11:54:48.860] [Alice Logs] [info] [18467] Successful response
+[2019-09-18 11:54:49.025] [Alice Logs] [info] [26500] /encrypt/email Receiving Request
+[2019-09-18 11:54:49.025] [Alice Logs] [info] [26500] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:54:49.129] [Alice Logs] [info] [11478] Successful response
+[2019-09-18 11:54:49.166] [Alice Logs] [info] [29358] /encrypt/email Receiving Request
+[2019-09-18 11:54:49.166] [Alice Logs] [info] [29358] Request -> <accountId: pedro, recipientId: posi>
+[2019-09-18 11:54:49.437] [Alice Logs] [info] [6334] /encrypt/email Receiving Request
+[2019-09-18 11:54:49.437] [Alice Logs] [info] [6334] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:54:49.550] [Alice Logs] [info] [26500] Successful response
+[2019-09-18 11:54:49.681] [Alice Logs] [info] [29358] Successful response
+[2019-09-18 11:54:49.855] [Alice Logs] [info] [26962] /encrypt/email Receiving Request
+[2019-09-18 11:54:49.855] [Alice Logs] [info] [26962] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:54:49.961] [Alice Logs] [info] [6334] Successful response
+[2019-09-18 11:54:50.267] [Alice Logs] [info] [19169] /encrypt/email Receiving Request
+[2019-09-18 11:54:50.267] [Alice Logs] [info] [19169] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:54:50.383] [Alice Logs] [info] [26962] Successful response
+[2019-09-18 11:54:50.672] [Alice Logs] [info] [19169] Successful response
+[2019-09-18 11:54:50.688] [Alice Logs] [info] [24464] /encrypt/email Receiving Request
+[2019-09-18 11:54:50.688] [Alice Logs] [info] [24464] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:54:50.984] [Alice Logs] [info] [24464] Successful response
+[2019-09-18 11:54:51.290] [Alice Logs] [info] [5705] /encrypt/email Receiving Request
+[2019-09-18 11:54:51.290] [Alice Logs] [info] [5705] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:54:51.570] [Alice Logs] [info] [5705] Successful response
+[2019-09-18 11:56:30.048] [Alice Logs] [info] [15724] /encrypt/email Receiving Request
+[2019-09-18 11:56:30.048] [Alice Logs] [info] [15724] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:56:30.354] [Alice Logs] [info] [26500] /encrypt/email Receiving Request
+[2019-09-18 11:56:30.354] [Alice Logs] [info] [26500] Request -> <accountId: pedro, recipientId: isabel>
+[2019-09-18 11:56:30.355] [Alice Logs] [info] [28145] /encrypt/email Receiving Request
+[2019-09-18 11:56:30.356] [Alice Logs] [info] [28145] Request -> <accountId: pedro, recipientId: digimon>
+[2019-09-18 11:56:30.357] [Alice Logs] [info] [41] /encrypt/email Receiving Request
+[2019-09-18 11:56:30.357] [Alice Logs] [info] [41] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:56:30.499] [Alice Logs] [info] [15724] Successful response
+[2019-09-18 11:56:30.810] [Alice Logs] [info] [11478] /encrypt/email Receiving Request
+[2019-09-18 11:56:30.810] [Alice Logs] [info] [11478] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:56:31.655] [Alice Logs] [info] [26500] Successful response
+[2019-09-18 11:56:31.809] [Alice Logs] [info] [28145] Successful response
+[2019-09-18 11:56:31.961] [Alice Logs] [info] [23281] /encrypt/email Receiving Request
+[2019-09-18 11:56:31.961] [Alice Logs] [info] [23281] Request -> <accountId: pedro, recipientId: isabel>
+[2019-09-18 11:56:32.115] [Alice Logs] [info] [19169] /encrypt/email Receiving Request
+[2019-09-18 11:56:32.115] [Alice Logs] [info] [19169] Request -> <accountId: pedro, recipientId: digimon>
+[2019-09-18 11:56:32.141] [Alice Logs] [info] [41] Successful response
+[2019-09-18 11:56:32.299] [Alice Logs] [info] [11478] Successful response
+[2019-09-18 11:56:32.447] [Alice Logs] [info] [29358] /encrypt/email Receiving Request
+[2019-09-18 11:56:32.447] [Alice Logs] [info] [29358] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:56:32.610] [Alice Logs] [info] [18467] /encrypt/email Receiving Request
+[2019-09-18 11:56:32.610] [Alice Logs] [info] [18467] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:56:33.554] [Alice Logs] [info] [23281] Successful response
+[2019-09-18 11:56:33.750] [Alice Logs] [info] [19169] Successful response
+[2019-09-18 11:56:33.860] [Alice Logs] [info] [16827] /encrypt/email Receiving Request
+[2019-09-18 11:56:33.860] [Alice Logs] [info] [16827] Request -> <accountId: pedro, recipientId: isabel>
+[2019-09-18 11:56:34.056] [Alice Logs] [info] [29358] Successful response
+[2019-09-18 11:56:34.333] [Alice Logs] [info] [18467] Successful response
+[2019-09-18 11:56:34.363] [Alice Logs] [info] [26962] /encrypt/email Receiving Request
+[2019-09-18 11:56:34.363] [Alice Logs] [info] [26962] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:56:34.637] [Alice Logs] [info] [15724] /encrypt/email Receiving Request
+[2019-09-18 11:56:34.637] [Alice Logs] [info] [15724] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:56:34.709] [Alice Logs] [info] [16827] Successful response
+[2019-09-18 11:56:35.015] [Alice Logs] [info] [9961] /encrypt/email Receiving Request
+[2019-09-18 11:56:35.015] [Alice Logs] [info] [9961] Request -> <accountId: pedro, recipientId: isabel>
+[2019-09-18 11:56:35.078] [Alice Logs] [info] [26962] Successful response
+[2019-09-18 11:56:35.383] [Alice Logs] [info] [24464] /encrypt/email Receiving Request
+[2019-09-18 11:56:35.383] [Alice Logs] [info] [24464] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:56:35.489] [Alice Logs] [info] [15724] Successful response
+[2019-09-18 11:56:35.797] [Alice Logs] [info] [11478] /encrypt/email Receiving Request
+[2019-09-18 11:56:35.797] [Alice Logs] [info] [11478] Request -> <accountId: pedro, recipientId: jorge>
+[2019-09-18 11:56:35.931] [Alice Logs] [info] [9961] Successful response
+[2019-09-18 11:56:36.236] [Alice Logs] [info] [491] /encrypt/email Receiving Request
+[2019-09-18 11:56:36.236] [Alice Logs] [info] [491] Request -> <accountId: pedro, recipientId: isabel>
+[2019-09-18 11:56:36.412] [Alice Logs] [info] [24464] Successful response
+[2019-09-18 11:56:36.717] [Alice Logs] [info] [5705] /encrypt/email Receiving Request
+[2019-09-18 11:56:36.717] [Alice Logs] [info] [5705] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:56:37.483] [Alice Logs] [info] [11478] Successful response
+[2019-09-18 11:56:37.820] [Alice Logs] [info] [491] Successful response
+[2019-09-18 11:56:38.126] [Alice Logs] [info] [2995] /encrypt/email Receiving Request
+[2019-09-18 11:56:38.126] [Alice Logs] [info] [2995] Request -> <accountId: pedro, recipientId: isabel>
+[2019-09-18 11:56:38.157] [Alice Logs] [info] [5705] Successful response
+[2019-09-18 11:56:38.463] [Alice Logs] [info] [28145] /encrypt/email Receiving Request
+[2019-09-18 11:56:38.463] [Alice Logs] [info] [28145] Request -> <accountId: pedro, recipientId: pedro>
+[2019-09-18 11:56:38.584] [Alice Logs] [info] [2995] Successful response
+[2019-09-18 11:56:38.890] [Alice Logs] [info] [11942] /encrypt/email Receiving Request
+[2019-09-18 11:56:38.890] [Alice Logs] [info] [11942] Request -> <accountId: pedro, recipientId: isabel>
+[2019-09-18 11:56:39.231] [Alice Logs] [info] [28145] Successful response
+[2019-09-18 11:56:39.495] [Alice Logs] [info] [11942] Successful response
+[2019-09-18 11:56:39.801] [Alice Logs] [info] [4827] /encrypt/email Receiving Request
+[2019-09-18 11:56:39.801] [Alice Logs] [info] [4827] Request -> <accountId: pedro, recipientId: isabel>
+[2019-09-18 11:56:40.385] [Alice Logs] [info] [4827] Successful response
+[2019-09-18 11:56:40.390] [Alice Logs] [info] [23281] /encrypt/email Receiving Request
+[2019-09-18 11:56:40.390] [Alice Logs] [info] [23281] Request -> <accountId: pedro, recipientId: isabel>
+[2019-09-18 11:56:40.940] [Alice Logs] [info] [23281] Successful response
+[2019-09-18 11:56:41.246] [Alice Logs] [info] [5436] /encrypt/email Receiving Request
+[2019-09-18 11:56:41.246] [Alice Logs] [info] [5436] Request -> <accountId: pedro, recipientId: isabel>
+[2019-09-18 11:56:42.095] [Alice Logs] [info] [5436] Successful response
