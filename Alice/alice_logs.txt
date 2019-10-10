@@ -1,0 +1,56 @@
+[2019-10-09 13:17:56.832] [Alice Logs] [info] Starting Service
+[2019-10-09 13:17:56.836] [Alice Logs] [info] No db path argument passed
+[2019-10-09 13:18:45.694] [Alice Logs] [info] Starting Service
+[2019-10-09 13:18:45.696] [Alice Logs] [info] No db path argument passed
+[2019-10-09 13:23:57.476] [Alice Logs] [info] Starting Service
+[2019-10-09 13:23:57.478] [Alice Logs] [info] No db path argument passed
+[2019-10-09 13:24:25.965] [Alice Logs] [info] Starting Service
+[2019-10-09 13:24:25.967] [Alice Logs] [info] No db path argument passed
+[2019-10-09 13:25:18.096] [Alice Logs] [info] Starting Service
+[2019-10-09 13:25:18.099] [Alice Logs] [info] DB PATH: criptext.db
+[2019-10-09 13:25:18.099] [Alice Logs] [info] PORT : 
+8085
+[2019-10-09 14:01:20.211] [Alice Logs] [info] Starting Service
+[2019-10-09 14:01:20.214] [Alice Logs] [info] No db path argument passed
+[2019-10-09 14:02:03.301] [Alice Logs] [info] Starting Service
+[2019-10-09 14:02:03.303] [Alice Logs] [info] DB PATH: C:\Users\Pedro\AppData\Roaming\Criptext\Criptext.db
+[2019-10-09 14:02:03.303] [Alice Logs] [info] PORT : 8085
+[2019-10-09 14:03:36.760] [Alice Logs] [info] Starting Service
+[2019-10-09 14:03:36.761] [Alice Logs] [info] DB PATH: C:\Users\Pedro\AppData\Roaming\Criptext\Criptext.db
+[2019-10-09 14:03:36.761] [Alice Logs] [info] PORT : 8085
+[2019-10-09 14:04:57.901] [Alice Logs] [info] Starting Service
+[2019-10-09 14:04:57.902] [Alice Logs] [info] DB PATH: C:\Users\Pedro\AppData\Roaming\Criptext\Criptext.db
+[2019-10-09 14:04:57.902] [Alice Logs] [info] PORT : 8085
+[2019-10-09 15:30:05.572] [Alice Logs] [info] Starting Service
+[2019-10-09 15:30:05.575] [Alice Logs] [info] DB PATH: C:\Users\Pedro\AppData\Roaming\Criptext\Criptext.db
+[2019-10-09 15:30:05.575] [Alice Logs] [info] PORT : 8085
+[2019-10-09 15:30:20.799] [Alice Logs] [info] [41] /encrypt/email Receiving Request
+[2019-10-09 15:30:20.799] [Alice Logs] [info] [41] Request -> <accountId: pedro, recipientId: daniel>
+[2019-10-09 15:30:20.801] [Alice Logs] [info] [41] /encrypt/email Receiving Request
+[2019-10-09 15:30:20.801] [Alice Logs] [info] [41] Request -> <accountId: pedro, recipientId: pedro>
+[2019-10-09 15:30:21.588] [Alice Logs] [info] [41] Successful response
+[2019-10-09 15:30:21.593] [Alice Logs] [info] [41] /encrypt/email Receiving Request
+[2019-10-09 15:30:21.593] [Alice Logs] [info] [41] Request -> <accountId: pedro, recipientId: daniel>
+[2019-10-09 15:30:21.691] [Alice Logs] [info] [41] Successful response
+[2019-10-09 15:30:21.997] [Alice Logs] [info] [18467] /encrypt/email Receiving Request
+[2019-10-09 15:30:21.997] [Alice Logs] [info] [18467] Request -> <accountId: pedro, recipientId: pedro>
+[2019-10-09 15:30:22.000] [Alice Logs] [info] [41] Successful response
+[2019-10-09 15:30:22.344] [Alice Logs] [info] [18467] Successful response
+[2019-10-09 15:30:22.649] [Alice Logs] [info] [6334] /encrypt/email Receiving Request
+[2019-10-09 15:30:22.649] [Alice Logs] [info] [6334] Request -> <accountId: pedro, recipientId: pedro>
+[2019-10-09 15:30:23.026] [Alice Logs] [info] [6334] Successful response
+[2019-10-09 15:30:23.030] [Alice Logs] [info] [18467] /encrypt/email Receiving Request
+[2019-10-09 15:30:23.030] [Alice Logs] [info] [18467] Request -> <accountId: pedro, recipientId: pedro>
+[2019-10-09 15:30:23.341] [Alice Logs] [info] [18467] Successful response
+[2019-10-09 15:30:23.648] [Alice Logs] [info] [26500] /encrypt/email Receiving Request
+[2019-10-09 15:30:23.648] [Alice Logs] [info] [26500] Request -> <accountId: pedro, recipientId: pedro>
+[2019-10-09 15:30:23.930] [Alice Logs] [info] [26500] Successful response
+[2019-10-09 15:30:23.934] [Alice Logs] [info] [6334] /encrypt/email Receiving Request
+[2019-10-09 15:30:23.934] [Alice Logs] [info] [6334] Request -> <accountId: pedro, recipientId: pedro>
+[2019-10-09 15:30:24.330] [Alice Logs] [info] [6334] Successful response
+[2019-10-09 15:30:24.636] [Alice Logs] [info] [41] /encrypt/email Receiving Request
+[2019-10-09 15:30:24.636] [Alice Logs] [info] [41] Request -> <accountId: pedro, recipientId: pedro>
+[2019-10-09 15:30:24.915] [Alice Logs] [info] [41] Successful response
+[2019-10-09 15:30:24.919] [Alice Logs] [info] [41] /encrypt/email Receiving Request
+[2019-10-09 15:30:24.919] [Alice Logs] [info] [41] Request -> <accountId: pedro, recipientId: pedro>
+[2019-10-09 15:30:25.267] [Alice Logs] [info] [41] Successful response

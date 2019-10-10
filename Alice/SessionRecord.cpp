@@ -9,7 +9,7 @@ CriptextDB::SessionRecord CriptextDB::getSessionRecord(string dbPath, string rec
   database db(dbPath, config);
   
   std::cout << 14 << " : " << recipientId << " : " << deviceId << std::endl;
-  char *myRecord;
+  string myRecord;
   int myLen = 0;
   db << "Select * from sessionrecord where recipientId == ? and deviceId == ?;"
      << recipientId
@@ -17,9 +17,8 @@ CriptextDB::SessionRecord CriptextDB::getSessionRecord(string dbPath, string rec
      >> [&] (string recipientId, int deviceId, string record, int recordLength) {
         std::cout << 14.5 << " : " << record << std::endl;
         myLen = recordLength;
-        myRecord = (char *)malloc(recordLength);
-        strcpy(myRecord, record.c_str());
-    };
+		myRecord = record;
+	};
   if (myLen == 0) {
     std::cout << 15 << std::endl;
     throw std::invalid_argument("row not available");

@@ -23,7 +23,7 @@ CriptextDB::IdentityKey CriptextDB::getIdentityKey(string dbPath, string recipie
         };
     };
 
-  if (identityKey.deviceId == 0) {
+  if (identityKey.deviceId == 0 || identityKey.identityKey.empty()) {
     std::cout << 2 << std::endl;
     throw std::invalid_argument("row not available");
   }
