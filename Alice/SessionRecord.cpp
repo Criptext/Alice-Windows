@@ -9,7 +9,7 @@ CriptextDB::SessionRecord CriptextDB::getSessionRecord(string dbPath, string rec
   database db(dbPath, config);
   
   std::cout << 14 << " : " << recipientId << " : " << deviceId << std::endl;
-  string myRecord;
+  string myRecord = "";
   int myLen = 0;
   db << "Select * from sessionrecord where recipientId == ? and deviceId == ?;"
      << recipientId
@@ -49,7 +49,7 @@ vector<CriptextDB::SessionRecord> CriptextDB::getSessionRecords(string dbPath, s
         SessionRecord mySessionRecord = { 
           recipientId, 
           deviceId, 
-          const_cast<char *>(record.c_str()), 
+          record, 
           (size_t)recordLength 
         };
         sessionRecords.push_back(mySessionRecord);

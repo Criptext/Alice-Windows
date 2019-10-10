@@ -24,10 +24,11 @@ CriptextDB::IdentityKey CriptextDB::getIdentityKey(string dbPath, string recipie
     };
 
   if (identityKey.deviceId == 0 || identityKey.identityKey.empty()) {
-    std::cout << 2 << std::endl;
-    throw std::invalid_argument("row not available");
+	  std::cout << 2 << std::endl;
+	  throw std::invalid_argument("row not available");
   }
-  std::cout << 3 << std::endl;
+
+  std::cout << 3 << identityKey.identityKey << std::endl;
   return identityKey;
 }
 

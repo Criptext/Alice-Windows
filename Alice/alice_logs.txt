@@ -54,3 +54,36 @@
 [2019-10-09 15:30:24.919] [Alice Logs] [info] [41] /encrypt/email Receiving Request
 [2019-10-09 15:30:24.919] [Alice Logs] [info] [41] Request -> <accountId: pedro, recipientId: pedro>
 [2019-10-09 15:30:25.267] [Alice Logs] [info] [41] Successful response
+[2019-10-10 10:33:19.718] [Alice Logs] [info] Starting Service
+[2019-10-10 10:33:19.722] [Alice Logs] [info] No db path argument passed
+[2019-10-10 11:36:02.929] [Alice Logs] [info] Starting Service
+[2019-10-10 11:36:02.932] [Alice Logs] [info] No db path argument passed
+[2019-10-10 11:36:30.699] [Alice Logs] [info] Starting Service
+[2019-10-10 11:36:30.703] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-10-10 11:36:30.703] [Alice Logs] [info] PORT : 8085
+[2019-10-10 11:36:54.562] [Alice Logs] [info] [41] /decrypt Receiving Request
+[2019-10-10 11:36:54.564] [Alice Logs] [info] [41] Request -> <RecipientId: pedro, senderId: jorge, EmailKey: 7959>
+[2019-10-10 11:40:33.512] [Alice Logs] [info] Starting Service
+[2019-10-10 11:40:33.520] [Alice Logs] [info] DB PATH: C:\Users\Unable to decrypt\Documents\Git\Criptext-Email-React-Client\electron_app\src\Criptext.db
+[2019-10-10 11:40:33.520] [Alice Logs] [info] PORT : 8085
+[2019-10-10 11:41:44.641] [Alice Logs] [info] [41] /decrypt Receiving Request
+[2019-10-10 11:41:44.646] [Alice Logs] [info] [41] Request -> <RecipientId: pedro, senderId: bob, EmailKey: 7963>
+[2019-10-10 11:41:45.151] [Alice Logs] [info] [41] Successful response
+[2019-10-10 11:41:46.232] [Alice Logs] [info] [41] /decrypt Receiving Request
+[2019-10-10 11:41:46.250] [Alice Logs] [info] [41] Request -> <RecipientId: pedro, senderId: bob, EmailKey: 7964>
+[2019-10-10 11:41:46.630] [Alice Logs] [info] [41] Successful response
+[2019-10-10 11:41:47.603] [Alice Logs] [info] [18467] /decrypt Receiving Request
+[2019-10-10 11:41:47.604] [Alice Logs] [info] [18467] Request -> <RecipientId: pedro, senderId: pedro, EmailKey: 7966>
+[2019-10-10 11:41:47.862] [Alice Logs] [info] [18467] Successful response
+[2019-10-10 11:41:49.147] [Alice Logs] [info] [18467] /decrypt Receiving Request
+[2019-10-10 11:41:49.166] [Alice Logs] [info] [18467] Request -> <RecipientId: pedro, senderId: bob, EmailKey: 7967>
+[2019-10-10 11:41:49.530] [Alice Logs] [info] [18467] Successful response
+[2019-10-10 11:41:50.581] [Alice Logs] [info] [6334] /decrypt Receiving Request
+[2019-10-10 11:41:50.617] [Alice Logs] [info] [6334] Request -> <RecipientId: pedro, senderId: bob, EmailKey: 7969>
+[2019-10-10 11:41:50.986] [Alice Logs] [info] [6334] Successful response
+[2019-10-10 11:41:52.314] [Alice Logs] [info] [6334] /decrypt Receiving Request
+[2019-10-10 11:41:52.346] [Alice Logs] [info] [6334] Request -> <RecipientId: pedro, senderId: bob, EmailKey: 7971>
+[2019-10-10 11:41:52.720] [Alice Logs] [info] [6334] Successful response
+[2019-10-10 11:41:53.867] [Alice Logs] [info] [26500] /decrypt Receiving Request
+[2019-10-10 11:41:53.899] [Alice Logs] [info] [26500] Request -> <RecipientId: pedro, senderId: bob, EmailKey: 7973>
+[2019-10-10 11:41:54.263] [Alice Logs] [info] [26500] Successful response

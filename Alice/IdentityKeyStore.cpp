@@ -2,17 +2,15 @@
 
 int identity_key_store_get_identity_key_pair(signal_buffer **public_data, signal_buffer **private_data, void *user_data)
 {
-    std::cout << "HOLA WOLA" << std::endl;
     CriptextDB::Account *account = (CriptextDB::Account*)user_data;
-    std::cout << "HOLA WOLA : " << account->privKey << std::endl;
     size_t len = 0;
 
-    unsigned char *identityKeyPriv = reinterpret_cast<unsigned char *>(account->privKey);
-    uint8_t *myPrivRecord = reinterpret_cast<uint8_t *>(base64_decode(identityKeyPriv, strlen(account->privKey), &len));    
+    const unsigned char *identityKeyPriv = reinterpret_cast<const unsigned char *>(account->privKey.c_str());
+    uint8_t *myPrivRecord = reinterpret_cast<uint8_t *>(base64_decode(identityKeyPriv, account->privKey.length(), &len));
     signal_buffer *privKeyBuffer = signal_buffer_create(myPrivRecord, len);
     
-    unsigned char *identityKeyPub = reinterpret_cast<unsigned char *>(account->pubKey);
-    uint8_t *myPubRecord = reinterpret_cast<uint8_t *>(base64_decode(identityKeyPub, strlen(account->pubKey), &len));    
+    const unsigned char *identityKeyPub = reinterpret_cast<const unsigned char *>(account->pubKey.c_str());
+    uint8_t *myPubRecord = reinterpret_cast<uint8_t *>(base64_decode(identityKeyPub, account->pubKey.length(), &len));
     signal_buffer *pubKeyBuffer = signal_buffer_create(myPubRecord, len);
     
     *public_data = pubKeyBuffer;
@@ -41,7 +39,7 @@ int identity_key_store_save_identity(const signal_protocol_address *address, uin
 
 int identity_key_store_is_trusted_identity(const signal_protocol_address *address, uint8_t *key_data, size_t key_len, void *user_data)
 {
-    return 1;
+	return 1;
 }
 
 void identity_key_store_destroy(void *user_data)

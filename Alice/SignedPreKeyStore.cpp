@@ -13,7 +13,7 @@ int signed_pre_key_store_load_signed_pre_key(signal_buffer **record, uint32_t si
     }
     std::cout << 27.2 << " : " << signedPreKey.record << std::endl;
     size_t len = 0;
-    unsigned char *recordBase64 = reinterpret_cast<unsigned char *>(signedPreKey.record);
+    const unsigned char *recordBase64 = reinterpret_cast<const unsigned char *>(signedPreKey.record.c_str());
     uint8_t *myRecord = reinterpret_cast<uint8_t *>(base64_decode(recordBase64, signedPreKey.len, &len));    
     signal_buffer *buffer = signal_buffer_create(myRecord, len);
 
