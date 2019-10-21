@@ -26,8 +26,6 @@ int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath, cha
     return 400;
   }
 
-  std::cout << cJSON_Print(obj) << std::endl;
-
   cJSON* salt, * iv, * emailKey, * senderId, * deviceId, * type, * recipientId, * body, * headers, * fileKeys, * headersType;
   salt = cJSON_GetObjectItemCaseSensitive(obj, "salt");
   iv = cJSON_GetObjectItemCaseSensitive(obj, "iv");
@@ -182,8 +180,6 @@ int postDecryptKey(struct mg_connection *conn, void *cbdata, char *dbPath) {
   size_t len = 0;
   const unsigned char* text = reinterpret_cast<const unsigned char*>(plaintext_data);
   char* encodedText = reinterpret_cast<char*>(base64_encode(text, plaintext_len, &len));
-
-  std::cout << "SENDING... " << encodedText << std::endl;
 
   mg_send_http_ok(conn, "application/octet-stream", plaintext_len);
   mg_write(conn, plaintext_data, plaintext_len);
