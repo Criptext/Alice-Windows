@@ -39,7 +39,24 @@ int identity_key_store_save_identity(const signal_protocol_address *address, uin
 
 int identity_key_store_is_trusted_identity(const signal_protocol_address *address, uint8_t *key_data, size_t key_len, void *user_data)
 {
-	return 1;
+	CriptextDB::Account* account = (CriptextDB::Account*)user_data;
+	string dbPath(account->dbPath);
+	string recipientId = std::string(address->name);
+	int deviceId = address->device_id;
+
+	size_t data_len = 0;
+	const unsigned char* identityKey = reinterpret_cast<const unsigned char*>(key_data);
+	char* incomingIdentity = reinterpret_cast<char*>(base64_encode(identityKey, key_len, &data_len));
+	string incomingIdentityKey = string(incomingIdentity);
+
+	try {
+		CriptextDB::IdentityKey myIdentityKey = CriptextDB::getIdentityKey(dbPath, recipientId, deviceId);
+		return myIdentityKey.identityKey == incomingIdentityKey;
+	}
+	catch (exception& e) {
+		std::cout << "Error trusting key : " << e.what() << std::endl;
+		return 1;
+	}
 }
 
 void identity_key_store_destroy(void *user_data)
