@@ -1,6 +1,6 @@
 #include "decrypt.h"
 
-int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath) {
+int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath, char* password) {
   int endpointId = rand() % 1000000;
 
   int corsResult = cors(conn);
@@ -26,9 +26,10 @@ int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath) {
     return 400;
   }
 
-  std::cout << cJSON_Print(obj) << std::endl;
+  cJSON* salt, * iv, * emailKey, * senderId, * deviceId, * type, * recipientId, * body, * headers, * fileKeys, * headersType;
+  salt = cJSON_GetObjectItemCaseSensitive(obj, "salt");
+  iv = cJSON_GetObjectItemCaseSensitive(obj, "iv");
 
-  cJSON *emailKey, *senderId, *deviceId, *type, *recipientId, *body, *headers, *fileKeys, *headersType;
   senderId = cJSON_GetObjectItemCaseSensitive(obj, "senderId");
   deviceId = cJSON_GetObjectItemCaseSensitive(obj, "deviceId");
   recipientId = cJSON_GetObjectItemCaseSensitive(obj, "recipientId");
@@ -53,11 +54,8 @@ int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath) {
       uint8_t *plaintext_data = 0;
       size_t plaintext_len = 0;
       int result = signal.decryptText(&plaintext_data, &plaintext_len, body->valuestring, senderId->valuestring, deviceId->valueint, type->valueint);
-      char *text = (char *)malloc(plaintext_len);
-      memcpy(text, plaintext_data, plaintext_len);
-      text[plaintext_len] = '\0';
-      cJSON_AddStringToObject(response, "decryptedBody", text);
-      //free(text);
+      string text = std::string(plaintext_data, plaintext_data + plaintext_len);
+      cJSON_AddStringToObject(response, "decryptedBody", text.c_str());
     } catch (exception &ex) {
       spdlog::error("[{0}] DECRYPT BODY ERROR {1}", endpointId, ex.what());
       mg_send_http_error(conn, 500, "%s", "Unable to encrypt body");
@@ -70,11 +68,8 @@ int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath) {
       uint8_t *plaintext_data = 0;
       size_t plaintext_len = 0;
       int result = signal.decryptText(&plaintext_data, &plaintext_len, headers->valuestring, senderId->valuestring, deviceId->valueint, headersType->valueint);
-      char *text = (char *)malloc(plaintext_len);
-      memcpy(text, plaintext_data, plaintext_len);
-      text[plaintext_len] = '\0';
-      cJSON_AddStringToObject(response, "decryptedHeaders", text);
-      //free(text);
+      string text = std::string(plaintext_data, plaintext_data + plaintext_len);
+      cJSON_AddStringToObject(response, "decryptedHeaders", text.c_str());
     } catch (exception &ex) {
       spdlog::error("[{0}] DECRYPT HEADER ERROR {1}", endpointId, ex.what());
       mg_send_http_error(conn, 500, "%s", "Unable to encrypt body");
@@ -86,17 +81,13 @@ int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath) {
     cJSON *fileKey = NULL;
 
     cJSON_ArrayForEach(fileKey, fileKeys) {   
-           
       try {
         uint8_t *plaintext_data = 0;
         size_t plaintext_len = 0;
         int result = signal.decryptText(&plaintext_data, &plaintext_len, fileKey->valuestring, senderId->valuestring, deviceId->valueint, type->valueint);
-        char *text = (char *)malloc(plaintext_len);
-        memcpy(text, plaintext_data, plaintext_len);
-        text[plaintext_len] = '\0';
-        cJSON *decryptedFileKey = cJSON_CreateString(text);
+        string text = std::string(plaintext_data, plaintext_data + plaintext_len);
+        cJSON *decryptedFileKey = cJSON_CreateString(text.c_str());
         cJSON_AddItemToArray(myFileKeys, decryptedFileKey);
-        //free(text);
       } catch (exception &ex) {
         spdlog::error("[{0}] DECRYPT FILEKEY ERROR {1}", endpointId, ex.what());
         mg_send_http_error(conn, 500, "%s", "Unable to encrypt body");
@@ -107,8 +98,31 @@ int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath) {
     cJSON_AddItemToObject(response, "decryptedFileKeys", myFileKeys);
   }
 
+  if (!cJSON_IsString(salt) || !cJSON_IsString(iv)) {
+	  spdlog::info("[{0}] Successful response", endpointId);
+	  return SendJSON(conn, response);
+  }
+
+  char* myResponse = cJSON_PrintUnformatted(response);
+  signal_buffer* myKey = 0;
+  size_t saltLen = 0;
+  const uint8_t* mySalt = base64_decode(reinterpret_cast<unsigned char*>(salt->valuestring), strlen(salt->valuestring), &saltLen);
+  size_t ivLen = 0;
+  const uint8_t* myIv = base64_decode(reinterpret_cast<unsigned char*>(iv->valuestring), strlen(iv->valuestring), &ivLen);
+  int result = deriveKey(&myKey, mySalt, saltLen, password, strlen(password));
+
+  signal_buffer* encryptedResponse = 0;
+  result = encrypth(&encryptedResponse, 2, myKey->data, myKey->len, myIv, ivLen, reinterpret_cast<uint8_t*>(myResponse), strlen(myResponse), 0);
+
+  size_t encodedLen = 0;
+  unsigned char* encodedResponse = base64_encode(reinterpret_cast<unsigned char*>(signal_buffer_data(encryptedResponse)), signal_buffer_len(encryptedResponse), &encodedLen);
+
+  signal_buffer_free(myKey);
+
+  mg_send_http_ok(conn, "plain/text", encodedLen);
+  mg_write(conn, encodedResponse, encodedLen);
   spdlog::info("[{0}] Successful response", endpointId);
-  return SendJSON(conn, response);
+  return 200;
 }
 
 int postDecryptKey(struct mg_connection *conn, void *cbdata, char *dbPath) {
@@ -163,7 +177,11 @@ int postDecryptKey(struct mg_connection *conn, void *cbdata, char *dbPath) {
     return 400;
   }
 
-  mg_send_http_ok( conn, "application/octet-stream", plaintext_len);
+  size_t len = 0;
+  const unsigned char* text = reinterpret_cast<const unsigned char*>(plaintext_data);
+  char* encodedText = reinterpret_cast<char*>(base64_encode(text, plaintext_len, &len));
+
+  mg_send_http_ok(conn, "application/octet-stream", plaintext_len);
   mg_write(conn, plaintext_data, plaintext_len);
   spdlog::info("[{0}] Successful response", endpointId);
   return 200;

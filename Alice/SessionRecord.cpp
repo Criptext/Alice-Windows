@@ -8,23 +8,18 @@ CriptextDB::SessionRecord CriptextDB::getSessionRecord(string dbPath, string rec
   config.flags = OpenFlags::FULLMUTEX | OpenFlags::SHAREDCACHE | OpenFlags::READONLY;
   database db(dbPath, config);
   
-  std::cout << 14 << " : " << recipientId << " : " << deviceId << std::endl;
-  char *myRecord;
+  string myRecord = "";
   int myLen = 0;
   db << "Select * from sessionrecord where recipientId == ? and deviceId == ?;"
      << recipientId
      << deviceId
      >> [&] (string recipientId, int deviceId, string record, int recordLength) {
-        std::cout << 14.5 << " : " << record << std::endl;
         myLen = recordLength;
-        myRecord = (char *)malloc(recordLength);
-        strcpy(myRecord, record.c_str());
-    };
+		myRecord = record;
+	};
   if (myLen == 0) {
-    std::cout << 15 << std::endl;
     throw std::invalid_argument("row not available");
   }
-  std::cout << 15.1 << " : " << myRecord << std::endl;
   SessionRecord sessionRecord = { 
     recipientId, 
     deviceId, 
@@ -32,13 +27,11 @@ CriptextDB::SessionRecord CriptextDB::getSessionRecord(string dbPath, string rec
     (size_t)myLen 
   };
 
-  std::cout << 16 << " : " << sessionRecord.record << std::endl;
   return sessionRecord;
 }
 
 vector<CriptextDB::SessionRecord> CriptextDB::getSessionRecords(string dbPath, string recipientId) {
   vector<CriptextDB::SessionRecord> sessionRecords;
-  std::cout << 17 << std::endl;
   try {
     sqlite_config config;
     config.flags = OpenFlags::FULLMUTEX | OpenFlags::SHAREDCACHE | OpenFlags::READONLY;
@@ -50,12 +43,11 @@ vector<CriptextDB::SessionRecord> CriptextDB::getSessionRecords(string dbPath, s
         SessionRecord mySessionRecord = { 
           recipientId, 
           deviceId, 
-          const_cast<char *>(record.c_str()), 
+          record, 
           (size_t)recordLength 
         };
         sessionRecords.push_back(mySessionRecord);
     };
-    std::cout << 18 << std::endl;
   } catch (exception& e) {
     std::cout << e.what() << std::endl; 
     return sessionRecords;
@@ -66,7 +58,6 @@ vector<CriptextDB::SessionRecord> CriptextDB::getSessionRecords(string dbPath, s
 
 bool CriptextDB::createSessionRecord(string dbPath, string recipientId, long int deviceId, char* record, size_t len) {
   try {
-    std::cout << 19 << std::endl;
     bool hasRow = false;
               
     sqlite_config config;
@@ -95,7 +86,6 @@ bool CriptextDB::createSessionRecord(string dbPath, string recipientId, long int
         << static_cast<int>(len);
     }
     db << "commit;";
-    std::cout << 21 << std::endl;
   } catch (exception& e) {
     std::cout << "ERROR : " << e.what() << std::endl;
     return false;
@@ -105,7 +95,6 @@ bool CriptextDB::createSessionRecord(string dbPath, string recipientId, long int
 
 bool CriptextDB::deleteSessionRecord(string dbPath, string recipientId, long int deviceId) {
   try {
-    std::cout << 22 << std::endl;
     sqlite_config config;
     config.flags = OpenFlags::FULLMUTEX | OpenFlags::SHAREDCACHE | OpenFlags::READWRITE;
     database db(dbPath, config);
@@ -116,13 +105,11 @@ bool CriptextDB::deleteSessionRecord(string dbPath, string recipientId, long int
     std::cout << "ERROR : " << e.what() << std::endl;
     return false;
   }
-  std::cout << 23 << std::endl;
   return true;
 }
 
 bool CriptextDB::deleteSessionRecords(string dbPath, string recipientId) {
   try {
-    std::cout << 24 << std::endl;
     sqlite_config config;
     config.flags = OpenFlags::FULLMUTEX | OpenFlags::SHAREDCACHE | OpenFlags::READWRITE;
     database db(dbPath, config);
@@ -133,6 +120,5 @@ bool CriptextDB::deleteSessionRecords(string dbPath, string recipientId) {
     std::cout << "ERROR : " << e.what() << std::endl;
     return false;
   }
-  std::cout << 25 << std::endl;
   return true;
 }

@@ -6,9 +6,10 @@ struct mg_callbacks callbacks;
 struct mg_context* ctx;
 
 char* db_path;
+char* password;
 
 int decryptEmail(struct mg_connection* conn, void* cbdata) {
-	return postDecryptEmail(conn, cbdata, db_path);
+	return postDecryptEmail(conn, cbdata, db_path, password);
 }
 
 int decryptKey(struct mg_connection* conn, void* cbdata) {
@@ -20,7 +21,7 @@ int encryptKey(struct mg_connection* conn, void* cbdata) {
 }
 
 int encryptEmail(struct mg_connection* conn, void* cbdata) {
-	return postEncryptEmail(conn, cbdata, db_path);
+	return postEncryptEmail(conn, cbdata, db_path, password);
 }
 
 int sessionCreate(struct mg_connection* conn, void* cbdata) {
@@ -47,8 +48,9 @@ int pong(struct mg_connection* conn, void* cbdata) {
 	return 1;
 }
 
-void http_init(char* dbPath, char* port) {
+void http_init(char* dbPath, char* port, char* pass) {
 	db_path = dbPath;
+	password = pass;
 
 	const char* civet_options[] = {
 	  "document_root",
@@ -56,7 +58,9 @@ void http_init(char* dbPath, char* port) {
 	  "listening_ports",
 	  port,
 	  "request_timeout_ms",
-	  "10000",
+	  "7000",
+	  "num_threads",
+	  "25",
 	  "error_log_file",
 	  "error.log",
 	  "enable_auth_domain_check",

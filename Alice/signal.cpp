@@ -51,7 +51,6 @@ int CriptextSignal::decryptText(uint8_t **plaintext_data, size_t *plaintext_len,
 
     session_cipher *session_cipher = 0;
     result = session_cipher_create(&session_cipher, store, &address, global_context);
-    std::cout << "Message Type : " << message_type <<  std::endl;
     size_t decode_len = 0;
     const unsigned char *encryptedCText = reinterpret_cast<const unsigned char*>(encryptedText.c_str());
     unsigned char* textFromB64 = base64_decode(encryptedCText, strlen((char *)encryptedCText), &decode_len);
@@ -76,8 +75,6 @@ int CriptextSignal::decryptText(uint8_t **plaintext_data, size_t *plaintext_len,
         }
         uint8_t *data = signal_buffer_data(plainMessage);
         size_t len = signal_buffer_len(plainMessage);
-
-        std::cout << "Message :  " << data << " - size: " << len << std::endl;
 
         *plaintext_data = data;
         *plaintext_len = len;
@@ -118,7 +115,7 @@ int CriptextSignal::generatePreKey(cJSON *preKeyJson, int index) {
     return 0;
 }
 
-int generateBundle(cJSON *bundle, int registrationId, char *signedPreKeySignature, char *signedPreKeyPublic, int signedPreKeyId, char *identityPublicKey, cJSON *preKeys) {
+int generateBundle(cJSON *bundle, int registrationId, char *signedPreKeySignature, char *signedPreKeyPublic, int signedPreKeyId, const char *identityPublicKey, cJSON *preKeys) {
 
     cJSON_AddStringToObject(bundle, "signedPreKeySignature", signedPreKeySignature);
     cJSON_AddStringToObject(bundle, "signedPreKeyPublic", signedPreKeyPublic);
@@ -166,8 +163,8 @@ int CriptextSignal::generateKeyBundle(cJSON *bundle, string recipientId, int dev
     ec_private_key *identityPrivateKey = 0;
 
     size_t privLen = 0;
-    unsigned char *identityKeyPriv = reinterpret_cast<unsigned char *>(account.privKey);
-    uint8_t *myPrivRecord = reinterpret_cast<uint8_t *>(base64_decode(identityKeyPriv, strlen(account.privKey), &privLen));    
+    const unsigned char *identityKeyPriv = reinterpret_cast<const unsigned char *>(account.privKey.c_str());
+    uint8_t *myPrivRecord = reinterpret_cast<uint8_t *>(base64_decode(identityKeyPriv, account.privKey.length(), &privLen));    
 
     result = curve_decode_private_point(&identityPrivateKey, myPrivRecord, privLen, 0);
     char *signedPublicPreKeyEncoded = 0;
@@ -180,7 +177,7 @@ int CriptextSignal::generateKeyBundle(cJSON *bundle, string recipientId, int dev
         cJSON_AddItemToArray(preKeysArray, preKeyObject);
     }
     
-    generateBundle(bundle, account.registrationId, signatureEncoded, signedPublicPreKeyEncoded, 1, account.pubKey, preKeysArray);
+    generateBundle(bundle, account.registrationId, signatureEncoded, signedPublicPreKeyEncoded, 1, account.pubKey.c_str(), preKeysArray);
     return 0;
 }
 
@@ -275,8 +272,6 @@ int CriptextSignal::encryptText(char **encryptedText, uint8_t *plainText, size_t
         signal_buffer *outgoing_serialized = ciphertext_message_get_serialized(encryptedMessage);
         const unsigned char *text = reinterpret_cast<const unsigned char *>(signal_buffer_data(outgoing_serialized));
         char *encodedText = reinterpret_cast<char *>(base64_encode(text, signal_buffer_len(outgoing_serialized), &len));
-
-        std::cout << "ENCRYPTED : " << plainText << std::endl << "TO : " << encodedText << std::endl << "TYPE: " << messageType << std::endl;
 
         session_cipher_free(session_cipher);
         SIGNAL_UNREF(encryptedMessage);
