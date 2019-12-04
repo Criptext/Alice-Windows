@@ -149,7 +149,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Alice-custom\sqlite3\sqlite-amalgamation-3310100;C:\Program Files\OpenSSL\include;C:\Alice-custom\sqlite_modern_cpp\hdr;C:\Program Files (x86)\signal-protocol-c\include;C:\Program Files (x86)\spdlog\include;C:\Program Files (x86)\cJSON\include;/usr/include;C:\Program Files (x86)\civetweb\include;/usr/local/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\suppo\Documents\Criptext\sqlcipher;C:\Program Files\OpenSSL\include;C:\Alice-custom\sqlite_modern_cpp\hdr;C:\Program Files (x86)\signal-protocol-c\include;C:\Program Files (x86)\spdlog\include;C:\Program Files (x86)\cJSON\include;/usr/include;C:\Program Files (x86)\civetweb\include;/usr/local/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
@@ -158,7 +158,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>C:\Alice-custom\sqlite3\sqlit3-source\sqlite3.lib;C:\Program Files\OpenSSL\lib\libcrypto.lib;C:\Program Files\OpenSSL\lib\libssl.lib;C:\Program Files (x86)\signal-protocol-c\lib\signal-protocol-c.lib;C:\Program Files (x86)\spdlog\lib\spdlog.lib;C:\Program Files (x86)\cJSON\lib\cjson.lib;C:\Program Files (x86)\civetweb\lib\civetweb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\Users\suppo\Documents\Criptext\sqlcipher\sqlcipher.lib;C:\Program Files\OpenSSL\lib\libcrypto.lib;C:\Program Files\OpenSSL\lib\libssl.lib;C:\Program Files (x86)\signal-protocol-c\lib\signal-protocol-c.lib;C:\Program Files (x86)\spdlog\lib\spdlog.lib;C:\Program Files (x86)\cJSON\lib\cjson.lib;C:\Program Files (x86)\civetweb\lib\civetweb.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/NODEFAULTLIB:LIBCMT</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
@@ -169,6 +169,7 @@
     <ClCompile Include="cJSON.c" />
     <ClCompile Include="cors.cpp" />
     <ClCompile Include="crypto.c" />
+    <ClCompile Include="dbUtils.cpp" />
     <ClCompile Include="decode_utils.cpp" />
     <ClCompile Include="decrypt.cpp" />
     <ClCompile Include="encrypt.cpp" />
@@ -193,6 +194,7 @@
     <ClInclude Include="cJSON.h" />
     <ClInclude Include="cors.h" />
     <ClInclude Include="crypto.h" />
+    <ClInclude Include="dbUtils.h" />
     <ClInclude Include="decode_utils.h" />
     <ClInclude Include="decrypt.h" />
     <ClInclude Include="encrypt.h" />

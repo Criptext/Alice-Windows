@@ -45,6 +45,23 @@ You need to build `sqlite3.lib`. In order to do so:
 You need to have some compiled `.lib` in your computer. Open a powershell in admin mode and type `.\install_deps.ps1`. This script will install civetweb, cJSON, lib signal, and spdlog libraries.
 You also need to have `sqlite_modern_cpp` somewhere in your pc. use `git clone https://github.com/SqliteModernCpp/sqlite_modern_cpp.git`. Locate the folder `\hdr` inside the project, you need to include it into your vs solution.
 
+### Install SQLCipher
+
+For a detailed guide to install SQLCipher go to: https://github.com/sqlitebrowser/sqlitebrowser/wiki/Win64-setup-%E2%80%94-Compiling-SQLCipher. We can summarize it in these steps:
+
+- Download the repo: https://github.com/sqlcipher/sqlcipher.git
+- Open `sqlcipher`
+- Edit the file `Makefile.msc`:
+  - Replace `SQLITE3DLL = sqlite3.dll` for `SQLITE3DLL - sqlcipher.dll`
+  - Do the same for `.lib`, `.exe` and `sh.pdb`
+  - For `-DSQLITE_TEMP_STORE` replace `1` for `2`
+  - Add a configuration for `TCC` and `RCC` with the parameter `-DSQLITE_HAS_CODEC`
+  - Add a configuration for `TCC` and `RCC` with the parameter containing the path of your `openssl` headers `-Ipath\to\your\openssl\include`
+  - Add a configuration for `LTLIBPATHS` with the path of your `openssl` libs: `LTLIBPATHS = $(LTLIBPATHS) /LIBPATH:path\to\your\openssl\lib`
+  - Add a configuration for `LTLIBS` with all the files contained inside your `openssl` lib folder: `LTLIBS = $(LTLIBS) crypto.lib openssl.lib`
+  - Replace all `sqlite3.def` for `sqlcipher.def` (5-6 Concurrencies)
+- Open `x64 Native Tools Command Propmt` and run `nmake /f Makefile.msc`
+
 ### Include dirs and linked libs
 
 You need to reference those installed dependencies in your vs solution. Ensure those dependencies are in release and debug mode. Also ensure to use windows standard library.
