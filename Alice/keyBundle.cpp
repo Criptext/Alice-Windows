@@ -24,18 +24,17 @@ int createKeyBundle(struct mg_connection *conn, void *cbdata, char *dbPath) {
   }
   std::cout << "Request -> " << cJSON_Print(obj) << std::endl;
 
-  cJSON *recipientId, *deviceId;
+  cJSON *recipientId;
   recipientId = cJSON_GetObjectItemCaseSensitive(obj, "recipientId");
-  deviceId = cJSON_GetObjectItemCaseSensitive(obj, "deviceId");
 
-  if (!cJSON_IsString(recipientId) || !cJSON_IsNumber(deviceId)) {
+  if (!cJSON_IsString(recipientId)) {
     mg_send_http_error(conn, 400, "%s", "Wrong data format");
     return 400;
   }
 
   CriptextSignal signal(recipientId->valuestring, dbPath);
   cJSON *bundle = cJSON_CreateObject();
-  signal.generateKeyBundle(bundle, recipientId->valuestring, deviceId->valueint);
+  signal.generateKeyBundle(bundle, recipientId->valuestring);
 
   return SendJSON(conn, bundle);
 }

@@ -39,11 +39,11 @@ You need to build `sqlite3.lib`. In order to do so:
 ### Install deps
 
 You need to have some compiled `.lib` in your computer. Open a powershell and type `.\install_deps.ps1`.
-You also need to have `sqlite_modern_cpp` somewhere in your pc. use `git clone https://github.com/SqliteModernCpp/sqlite_modern_cpp.git`. Locate the folder `\hdr` inside the project, you will need it to include it into your vs solution.
+You also need to have `sqlite_modern_cpp` somewhere in your pc. use `git clone https://github.com/SqliteModernCpp/sqlite_modern_cpp.git`. Locate the folder `\hdr` inside the project, you need to include it into your vs solution.
 
 ### Include dirs and linked libs
 
-You will need to reference those installed dependencies in your vs solution:
+You need to reference those installed dependencies in your vs solution:
 
 example:
 
