@@ -3,10 +3,8 @@
 using namespace std;
 using namespace sqlite;
 
-CriptextDB::PreKey CriptextDB::getPreKey(string dbPath, short int id) {
-  sqlite_config config;
-  config.flags = OpenFlags::FULLMUTEX | OpenFlags::SHAREDCACHE | OpenFlags::READONLY;
-  database db(dbPath, config);
+CriptextDB::PreKey CriptextDB::getPreKey(string dbPath, string password, short int id) {
+  database db = initializeDB(dbPath, password);
 
   string myPreKey = "";
   size_t myLen = 0;
@@ -28,13 +26,10 @@ CriptextDB::PreKey CriptextDB::getPreKey(string dbPath, short int id) {
   return preKey;
 }
 
-bool CriptextDB::createPreKey(string dbPath, short int id, char *keyRecord, size_t len) {
+bool CriptextDB::createPreKey(string dbPath, string password, short int id, char* keyRecord, size_t len) {
   try {
-
-    sqlite_config config;
-    config.flags = OpenFlags::FULLMUTEX | OpenFlags::SHAREDCACHE | OpenFlags::READWRITE;
-    database db(dbPath, config);
-
+	database db = initializeDB(dbPath, password);
+	std::cout << "Creating key " << id << " : " << dbPath << " : " << password << std::endl;
     db << "insert into prekeyrecord (preKeyId, record, recordLength) values (?,?,?);"
      << id
      << keyRecord
@@ -46,11 +41,9 @@ bool CriptextDB::createPreKey(string dbPath, short int id, char *keyRecord, size
   }
 }
 
-bool CriptextDB::deletePreKey(string dbPath, short int id) {
+bool CriptextDB::deletePreKey(string dbPath, string password, short int id) {
   try {
-    sqlite_config config;
-    config.flags = OpenFlags::FULLMUTEX  | OpenFlags::SHAREDCACHE | OpenFlags::READWRITE;
-    database db(dbPath, config);
+	database db = initializeDB(dbPath, password);
     db << "delete from prekeyrecord where preKeyId == ?;"
      << id;
     return true;

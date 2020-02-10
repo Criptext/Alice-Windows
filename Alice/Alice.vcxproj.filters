@@ -108,6 +108,9 @@
     <ClCompile Include="cJSON.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dbUtils.cpp">
+      <Filter>Source Files\db</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="http.h">
@@ -181,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="cJSON.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dbUtils.h">
+      <Filter>Source Files\db</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>

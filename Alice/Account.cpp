@@ -4,10 +4,8 @@
 using namespace std;
 using namespace sqlite;
 
-CriptextDB::Account CriptextDB::getAccount(string dbPath, char* recipientId) {
-	sqlite_config config;
-	config.flags = OpenFlags::FULLMUTEX | OpenFlags::SHAREDCACHE | OpenFlags::READONLY;
-	database db(dbPath, config);
+CriptextDB::Account CriptextDB::getAccount(string dbPath, string password, char* recipientId) {
+	database db = initializeDB(dbPath, password);
 
 	string myPrivKey = "";
 	string myPubKey = "";
@@ -23,17 +21,17 @@ CriptextDB::Account CriptextDB::getAccount(string dbPath, char* recipientId) {
 	  myPrivKey,
 	  myPubKey,
 	  regId,
-	  dbPath
+	  dbPath,
+	  password
 	};
 	return account;
 }
 
-int CriptextDB::createAccount(string dbPath, char* recipientId, char* name, int deviceId, char* pubKey, char* privKey, int registrationId) {
+int CriptextDB::createAccount(string dbPath, string password, char* recipientId, char* name, int deviceId, char* pubKey, char* privKey, int registrationId) {
 	try {
+		std::cout << "DB: " << dbPath << " || pass: " << password << std::endl;
+		database db = initializeDB(dbPath, password);
 		bool hasRow = false;
-		sqlite_config config;
-		config.flags = OpenFlags::FULLMUTEX | OpenFlags::SHAREDCACHE | OpenFlags::READWRITE;
-		database db(dbPath, config);
 		db << "Select recipientId from account where recipientId == ?;"
 			<< recipientId
 			>> [&](string recipientId) {
@@ -60,10 +58,30 @@ int CriptextDB::createAccount(string dbPath, char* recipientId, char* name, int 
 				<< pubKey
 				<< registrationId;
 		}
+
+		string myPrivKey = "";
+		string myPubKey = "";
+		int regId = 0;
+		db << "select privKey, pubKey, registrationId from account where recipientId == ?;"
+			<< recipientId
+			>> [&](string privKey, string pubKey, int registrationId) {
+			myPrivKey = privKey;
+			myPubKey = pubKey;
+			regId = registrationId;
+		};
+		Account account = {
+		  myPrivKey,
+		  myPubKey,
+		  regId,
+		  dbPath
+		};
+		std::cout << "STORED : " << account.registrationId << std::endl;
 	}
 	catch (exception& e) {
 		std::cout << "ERROR : " << e.what() << std::endl;
 		return false;
 	}
+
+
 	return true;
 }
