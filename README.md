@@ -15,13 +15,17 @@ In order to compile c++ in powershell, you need to install visual studio's comma
 
 In order to compile SQLiteCPP you need make. Download and install it: http://gnuwin32.sourceforge.net/packages/make.htm. Also add it to your system env path
 
+### Install CMake
+
+You must get CMake in order to compile and install some dependencies. Follow https://cmake.org/download/ to install it. Ensure to add it to your system env path.
+
 ### Install OpenSSL
 
 You need openSSL to handle cryptography, to install it do as follows:
 
 - Download and install perl from: http://strawberryperl.com/ 
 - Download the repo: https://github.com/openssl/openssl
-- Open `Cross Tools Command Propmt`
+- Open `Cross Tools Command Propmt` in admin mode.
 - Go to the repo's dir
 - Run `perl Configure no-asm VC-WIN64A`
 - Run `nmake` and `nmake install`
@@ -32,18 +36,18 @@ You need to build `sqlite3.lib`. In order to do so:
 
 - Download an amalgamation: https://www.sqlite.org/download.html
 - Download a binary matching the same version (You will need the `.def`) 
-- Open `Developer Command Prompt for VS`
+- Open `Developer Command Prompt for VS` in admin mode.
 - Run `lib /DEF:sqlite3.def /OUT:sqlite3.lib /MACHINE:x64`
 - Reference the .lib into your vs solution
 
 ### Install deps
 
-You need to have some compiled `.lib` in your computer. Open a powershell and type `.\install_deps.ps1`.
+You need to have some compiled `.lib` in your computer. Open a powershell in admin mode and type `.\install_deps.ps1`. This script will install civetweb, cJSON, lib signal, and spdlog libraries.
 You also need to have `sqlite_modern_cpp` somewhere in your pc. use `git clone https://github.com/SqliteModernCpp/sqlite_modern_cpp.git`. Locate the folder `\hdr` inside the project, you need to include it into your vs solution.
 
 ### Include dirs and linked libs
 
-You need to reference those installed dependencies in your vs solution:
+You need to reference those installed dependencies in your vs solution. Ensure those dependencies are in release and debug mode. Also ensure to use windows standard library.
 
 example:
 
