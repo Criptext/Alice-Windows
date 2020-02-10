@@ -14,12 +14,14 @@ namespace CriptextDB {
     string privKey;
     string pubKey;
     int registrationId;
-    string dbPath;
-    string password;
+    connection_type con;
+    database getDB() {
+      return database(con);
+    }
   };
 
-  Account getAccount(string dbPath, string password, char* recipientId);
-  int createAccount(string dbPath, string password, char* recipientId, char* name, int deviceId, char* pubKey, char* privKey, int registrationId);
+  Account getAccount(database db, char* recipientId);
+  int createAccount(database db, char* recipientId, char* name, int deviceId, char* pubKey, char* privKey, int registrationId);
 } 
 
 #endif

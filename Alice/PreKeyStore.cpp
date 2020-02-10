@@ -2,59 +2,53 @@
 
 int pre_key_store_load_pre_key(signal_buffer **record, uint32_t pre_key_id, void *user_data)
 {
-    CriptextDB::Account *account = (CriptextDB::Account*)user_data;
-    string dbPath(account->dbPath);
+  CriptextDB::Account *account = (CriptextDB::Account*)user_data;
+  CriptextDB::PreKey preKey;
 
-    CriptextDB::PreKey preKey;
-
-    try {
-		preKey = CriptextDB::getPreKey(account->dbPath, account->password, pre_key_id);
+  try {
+		preKey = CriptextDB::getPreKey(account->getDB(), pre_key_id);
 	} catch (exception& e){
-        return 0;
-    }
+    return 0;
+  }
 
-    size_t len = 0;
-    const unsigned char *recordBase64 = reinterpret_cast<const unsigned char *>(preKey.record.c_str());
-    uint8_t *myRecord = reinterpret_cast<uint8_t *>(base64_decode(recordBase64, preKey.len, &len));    
-    signal_buffer *buffer = signal_buffer_create(myRecord, len);
-    *record = buffer;
+  size_t len = 0;
+  const unsigned char *recordBase64 = reinterpret_cast<const unsigned char *>(preKey.record.c_str());
+  uint8_t *myRecord = reinterpret_cast<uint8_t *>(base64_decode(recordBase64, preKey.len, &len));    
+  signal_buffer *buffer = signal_buffer_create(myRecord, len);
+  *record = buffer;
 
-    return 1;
+  return 1;
 }
 
 int pre_key_store_store_pre_key(uint32_t pre_key_id, uint8_t *record, size_t record_len, void *user_data) {
-    CriptextDB::Account *account = (CriptextDB::Account*)user_data;
-    string dbPath(account->dbPath);
+  CriptextDB::Account *account = (CriptextDB::Account*)user_data;
 
-    size_t len = 0;
-    const unsigned char *myRecord = reinterpret_cast<const unsigned char *>(record);
-    char *recordBase64 = reinterpret_cast<char *>(base64_encode(myRecord, record_len, &len));
+  size_t len = 0;
+  const unsigned char *myRecord = reinterpret_cast<const unsigned char *>(record);
+  char *recordBase64 = reinterpret_cast<char *>(base64_encode(myRecord, record_len, &len));
 
-	bool success = CriptextDB::createPreKey(account->dbPath, account->password, pre_key_id, recordBase64, len);
+	bool success = CriptextDB::createPreKey(account->getDB(), pre_key_id, recordBase64, len);
 	return success ? 1 : 0;
 }
 
 int pre_key_store_contains_pre_key(uint32_t pre_key_id, void *user_data)
 {
-    CriptextDB::Account *account = (CriptextDB::Account*)user_data;
-    string dbPath(account->dbPath);
+  CriptextDB::Account *account = (CriptextDB::Account*)user_data;
+  CriptextDB::PreKey preKey;
 
-    CriptextDB::PreKey preKey;
-
-    try {
-		preKey = CriptextDB::getPreKey(account->dbPath, account->password, pre_key_id);
+  try {
+		preKey = CriptextDB::getPreKey(account->getDB(), pre_key_id);
 	} catch (exception& e){
-        return 0;
-    }
+    return 0;
+  }
     
-    return 1;
+  return 1;
 }
 
 int pre_key_store_remove_pre_key(uint32_t pre_key_id, void *user_data) {
-    CriptextDB::Account *account = (CriptextDB::Account*)user_data;
-    string dbPath(account->dbPath);
+  CriptextDB::Account *account = (CriptextDB::Account*)user_data;
 
-	bool success = CriptextDB::deletePreKey(account->dbPath, account->password, pre_key_id);
+	bool success = CriptextDB::deletePreKey(account->getDB(), pre_key_id);
 	return success ? 1 : 0;
 }
 

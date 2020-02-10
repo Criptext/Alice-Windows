@@ -178,6 +178,7 @@
     <ClCompile Include="IdentityKey.cpp" />
     <ClCompile Include="IdentityKeyStore.cpp" />
     <ClCompile Include="keyBundle.cpp" />
+    <ClCompile Include="password.cpp" />
     <ClCompile Include="PreKey.cpp" />
     <ClCompile Include="PreKeyStore.cpp" />
     <ClCompile Include="SessionRecord.cpp" />
@@ -203,6 +204,7 @@
     <ClInclude Include="IdentityKey.h" />
     <ClInclude Include="IdentityKeyStore.h" />
     <ClInclude Include="keyBundle.h" />
+    <ClInclude Include="password.h" />
     <ClInclude Include="PreKey.h" />
     <ClInclude Include="PreKeyStore.h" />
     <ClInclude Include="resource.h" />

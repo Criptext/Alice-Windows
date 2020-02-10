@@ -3,9 +3,7 @@
 using namespace sqlite;
 using namespace std;
 
-CriptextDB::SessionRecord CriptextDB::getSessionRecord(string dbPath, string password, string recipientId, long int deviceId) {
-  database db = initializeDB(dbPath, password);
-  
+CriptextDB::SessionRecord CriptextDB::getSessionRecord(database db, string recipientId, long int deviceId) {
   string myRecord = "";
   int myLen = 0;
   db << "Select * from sessionrecord where recipientId == ? and deviceId == ?;"
@@ -28,12 +26,10 @@ CriptextDB::SessionRecord CriptextDB::getSessionRecord(string dbPath, string pas
   return sessionRecord;
 }
 
-vector<CriptextDB::SessionRecord> CriptextDB::getSessionRecords(string dbPath, string password, string recipientId) {
+vector<CriptextDB::SessionRecord> CriptextDB::getSessionRecords(database db, string recipientId) {
   vector<CriptextDB::SessionRecord> sessionRecords;
   try {
-	database db = initializeDB(dbPath, password);
-
-    db << "Select * from sessionrecord where recipientId == ?;"
+	  db << "Select * from sessionrecord where recipientId == ?;"
      << recipientId
      >> [&] (string recipientId, int deviceId, string record, int recordLength) {
         SessionRecord mySessionRecord = { 
@@ -52,11 +48,9 @@ vector<CriptextDB::SessionRecord> CriptextDB::getSessionRecords(string dbPath, s
   return sessionRecords;
 }
 
-bool CriptextDB::createSessionRecord(string dbPath, string password, string recipientId, long int deviceId, char* record, size_t len) {
+bool CriptextDB::createSessionRecord(database db, string recipientId, long int deviceId, char* record, size_t len) {
   try {
-	bool hasRow = false;
-	database db = initializeDB(dbPath, password);
-
+  	bool hasRow = false;
     db << "begin;";
     db << "Select * from sessionrecord where recipientId == ? and deviceId == ?;"
      << recipientId
@@ -80,15 +74,14 @@ bool CriptextDB::createSessionRecord(string dbPath, string password, string reci
     }
     db << "commit;";
   } catch (exception& e) {
-    std::cout << "ERROR : " << e.what() << std::endl;
+    std::cout << "ERROR Creating Session Record : " << e.what() << std::endl;
     return false;
   }
   return true;
 }
 
-bool CriptextDB::deleteSessionRecord(string dbPath, string password, string recipientId, long int deviceId) {
+bool CriptextDB::deleteSessionRecord(database db, string recipientId, long int deviceId) {
   try {
-	database db = initializeDB(dbPath, password);
     db << "delete from sessionrecord where recipientId == ? and deviceId == ?;"
      << recipientId
      << deviceId;
@@ -99,10 +92,8 @@ bool CriptextDB::deleteSessionRecord(string dbPath, string password, string reci
   return true;
 }
 
-bool CriptextDB::deleteSessionRecords(string dbPath, string password, string recipientId) {
+bool CriptextDB::deleteSessionRecords(database db, string recipientId) {
   try {
-	database db = initializeDB(dbPath, password);
-
     db << "delete from sessionrecord where recipientId == ?;"
      << recipientId;
   } catch (exception& e) {

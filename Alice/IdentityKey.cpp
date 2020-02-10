@@ -5,9 +5,7 @@
 using namespace sqlite;
 using namespace std;
 
-CriptextDB::IdentityKey CriptextDB::getIdentityKey(string dbPath, string password, string recipientId, long int deviceId) {
-  database db = initializeDB(dbPath, password);
-
+CriptextDB::IdentityKey CriptextDB::getIdentityKey(database db, string recipientId, long int deviceId) {
   IdentityKey identityKey;
 
   db << "Select * from identitykeyrecord where recipientId == ? and deviceId == ?;"
@@ -28,10 +26,9 @@ CriptextDB::IdentityKey CriptextDB::getIdentityKey(string dbPath, string passwor
   return identityKey;
 }
 
-bool CriptextDB::createIdentityKey(string dbPath, string password, string recipientId, int deviceId, char* identityKey) {
+bool CriptextDB::createIdentityKey(database db, string recipientId, int deviceId, char* identityKey) {
   try {
 	bool hasRow = false;
-	database db = initializeDB(dbPath, password);
     db << "begin;";
     db << "Select * from identitykeyrecord where recipientId == ? and deviceId == ?;"
      << recipientId
@@ -52,7 +49,7 @@ bool CriptextDB::createIdentityKey(string dbPath, string password, string recipi
     }
     db << "commit;";
   } catch (exception& e) {
-    std::cout << "ERROR : " << e.what() << std::endl;
+    std::cout << "ERROR Creating Identity Key: " << e.what() << std::endl;
     return false;
   }
   return true;

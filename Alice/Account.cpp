@@ -4,9 +4,7 @@
 using namespace std;
 using namespace sqlite;
 
-CriptextDB::Account CriptextDB::getAccount(string dbPath, string password, char* recipientId) {
-	database db = initializeDB(dbPath, password);
-
+CriptextDB::Account CriptextDB::getAccount(database db, char* recipientId) {
 	string myPrivKey = "";
 	string myPubKey = "";
 	int regId = 0;
@@ -17,21 +15,21 @@ CriptextDB::Account CriptextDB::getAccount(string dbPath, string password, char*
 		myPubKey = pubKey;
 		regId = registrationId;
 	};
+
+	connection_type con = db.connection();
 	Account account = {
 	  myPrivKey,
 	  myPubKey,
 	  regId,
-	  dbPath,
-	  password
+	  con
 	};
 	return account;
 }
 
-int CriptextDB::createAccount(string dbPath, string password, char* recipientId, char* name, int deviceId, char* pubKey, char* privKey, int registrationId) {
+int CriptextDB::createAccount(database db, char* recipientId, char* name, int deviceId, char* pubKey, char* privKey, int registrationId) {
 	try {
-		std::cout << "DB: " << dbPath << " || pass: " << password << std::endl;
-		database db = initializeDB(dbPath, password);
 		bool hasRow = false;
+		db << "begin;";
 		db << "Select recipientId from account where recipientId == ?;"
 			<< recipientId
 			>> [&](string recipientId) {
@@ -69,16 +67,10 @@ int CriptextDB::createAccount(string dbPath, string password, char* recipientId,
 			myPubKey = pubKey;
 			regId = registrationId;
 		};
-		Account account = {
-		  myPrivKey,
-		  myPubKey,
-		  regId,
-		  dbPath
-		};
-		std::cout << "STORED : " << account.registrationId << std::endl;
+		db << "commit;";
 	}
 	catch (exception& e) {
-		std::cout << "ERROR : " << e.what() << std::endl;
+		std::cout << "ERROR Creating Account : " << e.what() << std::endl;
 		return false;
 	}
 
