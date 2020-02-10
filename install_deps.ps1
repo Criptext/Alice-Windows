@@ -13,7 +13,7 @@ Catch {
 git config --global core.autocrlf false
 # =======================================================================
 Try {
-    git clone https://github.com/signalapp/libsignal-protocol-c.git
+    git clone https://github.com/Hirobreak/libsignal-protocol-c.git
     Set-Location ./libsignal-protocol-c
     git checkout windows
     cmake . -B CptxBuild
@@ -40,6 +40,18 @@ Try {
     Set-Location ./spdlog
     cmake . -B build -DCMAKE_BUILD_TYPE=Release --loglevel="ERROR"
     cmake --build build --config Release --target install
+    Set-Location ..
+}
+Catch {
+    Write-Host $_.Exception.Message`n
+}
+
+# =======================================================================
+Try {
+    git clone https://github.com/DaveGamble/cJSON.git
+    Set-Location ./cJSON
+    cmake . -B CptxBuild --loglevel="ERROR"
+    cmake --build CptxBuild --config Release --target install
     Set-Location ..
 }
 Catch {
