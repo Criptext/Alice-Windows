@@ -5,6 +5,7 @@
 #include "decrypt.h"
 #include "encrypt.h"
 #include "keyBundle.h"
+#include "password.h"
 
-void http_init(char* dbPath, char* port, char* pass);
+void http_init(char* dbPath, char* port, char* token);
 void http_shutdown();
