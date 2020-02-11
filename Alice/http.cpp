@@ -86,6 +86,7 @@ void http_init(char* dbPath, char* port, char* token) {
 	mg_set_request_handler(ctx, "/keybundle", keyBundleCreate, 0);
 	mg_set_request_handler(ctx, "/prekey", preKeysCreate, 0);
 	mg_set_request_handler(ctx, "/session/create", sessionCreate, 0);
+	mg_set_request_handler(ctx, "/password/set", setPassword, 0);
 	mg_set_request_handler(ctx, "/ping", pong, 0);
 }
 
