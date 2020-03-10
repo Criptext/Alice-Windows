@@ -56,21 +56,26 @@ int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath, cha
   CriptextSignal signal(recipientId->valuestring, db);
   cJSON *response = cJSON_CreateObject();
   if (cJSON_IsString(body)) {
-    try {
-      uint8_t* plaintext_data = 0;
-      size_t plaintext_len = 0;
-      int result = signal.decryptText(&plaintext_data, &plaintext_len, body->valuestring, senderId->valuestring, deviceId->valueint, type->valueint);
-      if (result < 0) {
-        throw std::invalid_argument(parseSignalError(result));
-      }
-      string text = std::string(plaintext_data, plaintext_data + plaintext_len);
-      cJSON_AddStringToObject(response, "decryptedBody", text.c_str());
-    }
-    catch (exception & ex) {
-      spdlog::error("[{0}] DECRYPT BODY ERROR {1}", endpointId, ex.what());
-      sendError(conn, 500, ex.what());
-      return 500;
-    }
+	try {
+	  uint8_t* plaintext_data = 0;
+	  size_t plaintext_len = 0;
+	  int result = signal.decryptText(&plaintext_data, &plaintext_len, body->valuestring, senderId->valuestring, deviceId->valueint, type->valueint);
+	  if (result == -1001) {
+        spdlog::error("[{0}] DECRYPT BODY ERROR DUPLICATE MESSAGE", endpointId);
+	    sendError(conn, 409, "Duplicate Message");
+	    return 409;
+	  }
+	  else if (result < 0) {
+	    throw std::invalid_argument(parseSignalError(result));
+	  }
+	    string text = std::string(plaintext_data, plaintext_data + plaintext_len);
+	    cJSON_AddStringToObject(response, "decryptedBody", text.c_str());
+	}
+	catch (exception & ex) {
+	  spdlog::error("[{0}] DECRYPT BODY ERROR {1}", endpointId, ex.what());
+	  sendError(conn, 500, ex.what());
+	  return 500;
+	}
   }
 
   if (cJSON_IsString(headers)) {
