@@ -10,10 +10,10 @@ using namespace sqlite;
 CriptextDB::SignedPreKey CriptextDB::getSignedPreKey(database db, int accountId, short int id) {
   string mySignedPreKey = "";
   int myLen;
-  db << "Select * from signedprekeyrecord where signedPreKeyId == and accountId == ?;"
+  db << "Select * from signedprekeyrecord where signedPreKeyId == ? and accountId == ?;"
      << id
      << accountId
-     >> [&] (int preKeyId, string record, int recordLength) {
+     >> [&] (int id, int preKeyId, string record, int recordLength) {
         mySignedPreKey = record;
         myLen = (size_t)recordLength;
         

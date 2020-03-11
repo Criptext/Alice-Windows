@@ -77,7 +77,6 @@ int main(int argc, char const* argv[]) {
 
 	char* dbPath = const_cast<char*>(argv[1]);
 	char* port = (char *)"8085";
-	char* password = 0;
 
 	if (argc > 2) {
 		char* myPort = const_cast<char*>(argv[2]);
@@ -96,7 +95,6 @@ int main(int argc, char const* argv[]) {
 	signal(SIGFPE, CrashSignalHandler);*/
 
 	string token = random_string(32);
-	std::cout << "PASSWORD:" << token << std::endl;
 	http_init(dbPath, port, const_cast<char*>(token.c_str()));
 
 	while (1) {
