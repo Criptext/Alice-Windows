@@ -32,36 +32,37 @@ CriptextDB::Account CriptextDB::getAccount(database db, char* recipientId) {
 int CriptextDB::createAccount(database db, char* recipientId, char* name, int deviceId, char* pubKey, char* privKey, int registrationId) {
 	try {
 		bool hasRow = false;
-    
-    db << "begin;";
-    db << "Select recipientId from account where recipientId == ?;"
-     << recipientId
-     >> [&] (string recipientId) {
-        hasRow = true;
-    };
-    if (hasRow) {
-      db << "update account set name = ?, deviceId = ?, privKey = ?, pubKey = ?, registrationId = ?, isLoggedIn = false, isActive = false where recipientId == ?;"
-        << name
-        << deviceId
-        << privKey
-        << pubKey
-        << registrationId
-        << recipientId;
-    } else {
-      db << "insert into account (recipientId, name, deviceId, jwt, refreshToken, privKey, pubKey, registrationId, isLoggedIn, isActive) values (?,?,?,?,?,?,?,?,?,?);"
-        << recipientId
-        << name
-        << deviceId
-        << ""
-        << ""
-        << privKey
-        << pubKey
-        << registrationId
-        << false
-        << false;
-    }
-    db << "commit;";
-	catch (exception& e) {
+
+		db << "begin;";
+		db << "Select recipientId from account where recipientId == ?;"
+			<< recipientId
+			>> [&](string recipientId) {
+			hasRow = true;
+		};
+		if (hasRow) {
+			db << "update account set name = ?, deviceId = ?, privKey = ?, pubKey = ?, registrationId = ?, isLoggedIn = false, isActive = false where recipientId == ?;"
+				<< name
+				<< deviceId
+				<< privKey
+				<< pubKey
+				<< registrationId
+				<< recipientId;
+		}
+		else {
+			db << "insert into account (recipientId, name, deviceId, jwt, refreshToken, privKey, pubKey, registrationId, isLoggedIn, isActive) values (?,?,?,?,?,?,?,?,?,?);"
+				<< recipientId
+				<< name
+				<< deviceId
+				<< ""
+				<< ""
+				<< privKey
+				<< pubKey
+				<< registrationId
+				<< false
+				<< false;
+		}
+		db << "commit;";
+	} catch (exception & e) {
 		std::cout << "ERROR Creating Account : " << e.what() << std::endl;
 		return false;
 	}

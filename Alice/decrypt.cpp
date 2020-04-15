@@ -73,6 +73,7 @@ int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath, cha
 	}
 	catch (exception & ex) {
 	  spdlog::error("[{0}] DECRYPT BODY ERROR {1}", endpointId, ex.what());
+	  (void)[v = std::move(db)]{};
 	  sendError(conn, 500, ex.what());
 	  return 500;
 	}
@@ -91,6 +92,7 @@ int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath, cha
     }
     catch (exception & ex) {
       spdlog::error("[{0}] DECRYPT HEADER ERROR {1}", endpointId, ex.what());
+	  (void)[v = std::move(db)]{};
       sendError(conn, 500, ex.what());
       return 500;
     }
@@ -114,6 +116,7 @@ int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath, cha
       }
       catch (exception & ex) {
         spdlog::error("[{0}] DECRYPT FILEKEY ERROR {1}", endpointId, ex.what());
+		(void)[v = std::move(db)]{};
         sendError(conn, 500, ex.what());
         return 500;
       }
@@ -121,6 +124,8 @@ int postDecryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath, cha
 
     cJSON_AddItemToObject(response, "decryptedFileKeys", myFileKeys);
   }
+
+  (void)[v = std::move(db)]{};
 
   if (!cJSON_IsString(salt) || !cJSON_IsString(iv)) {
     spdlog::info("[{0}] Successful response", endpointId);
@@ -198,6 +203,9 @@ int postDecryptKey(struct mg_connection *conn, void *cbdata, char *dbPath, char*
   uint8_t* plaintext_data = 0;
   size_t plaintext_len = 0;
   int result = signal.decryptText(&plaintext_data, &plaintext_len, key->valuestring, recipientId->valuestring, deviceId->valueint, type->valueint);
+
+  (void)[v = std::move(db)]{};
+
   if (result < 0) {
     spdlog::error("[{0}] DECRYPT KEY ERROR {1}", endpointId, parseSignalError(result));
     sendError(conn, 500, parseSignalError(result));

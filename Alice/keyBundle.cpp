@@ -11,7 +11,7 @@ int createKeyBundle(struct mg_connection *conn, void *cbdata, char *dbPath, char
     return 401;
   }
 
-  std::cout << "/keybundle Receiving Request : " << password << std::endl;
+  std::cout << "/keybundle Receiving Request " << std::endl;
 
   char buffer[1024];
   int dlen = mg_read(conn, buffer, sizeof(buffer) - 1);
@@ -42,6 +42,7 @@ int createKeyBundle(struct mg_connection *conn, void *cbdata, char *dbPath, char
   cJSON *bundle = cJSON_CreateObject();
   signal.generateKeyBundle(bundle, recipientId->valuestring);
 
+  (void)[v = std::move(db)]{};
   return SendJSON(conn, bundle);
 }
 
@@ -90,6 +91,8 @@ int createAccount(struct mg_connection *conn, void *cbdata, char *dbPath, char* 
   int result = CriptextSignal::createAccountCredentials(&publicKey, &privKey, &regId);
   database db = initializeDB(dbPath, password);
   result = CriptextDB::createAccount(db, recipientId->valuestring, name->valuestring, deviceId->valueint, publicKey, privKey, regId);
+
+  (void)[v = std::move(db)]{};
 
   if (result < 0) {
     sendError(conn, 500, "Unable to Create Account");
@@ -179,7 +182,7 @@ int processKeyBundle(struct mg_connection *conn, void *cbdata, char *dbPath, cha
     };
     signal.processKeyBundle(&kb);
   }
-
+  (void)[v = std::move(db)]{};
   sendOK(conn, "");
   return 1;
 }
@@ -227,5 +230,6 @@ int createPreKeys(struct mg_connection *conn, void *cbdata, char *dbPath, char* 
   CriptextSignal signal(accountId->valuestring, db);
   cJSON* bundle = cJSON_CreateObject();
   signal.generateMorePreKeys(bundle, newPreKeys);
+  (void)[v = std::move(db)]{};
   return SendJSON(conn, bundle);
 }

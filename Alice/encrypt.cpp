@@ -58,6 +58,7 @@ int postEncryptKey(struct mg_connection *conn, void *cbdata, char *dbPath, char*
   int result = signal.encryptText(&encryptedText, myKey, keyLength, recipientId->valuestring, deviceId->valueint);
 
   free(myKey);
+  (void)[v = std::move(db)]{};
 
   if (result < 0) {
     std::string unencrypted = parseSignalError(result);
@@ -155,6 +156,7 @@ int postEncryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath, cha
     }
     catch (exception & ex) {
       spdlog::error("[{0}] ENCRYPT BODY ERROR {1}", endpointId, ex.what());
+	  (void)[v = std::move(db)]{};
       sendError(conn, 500, ex.what());
       return 500;
     }
@@ -174,6 +176,7 @@ int postEncryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath, cha
     }
     catch (exception & ex) {
       spdlog::error("[{0}] ENCRYPT PREVIEW ERROR {1}", endpointId, ex.what());
+	  (void)[v = std::move(db)]{};
       sendError(conn, 500, ex.what());
       return 500;
     }
@@ -198,6 +201,7 @@ int postEncryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath, cha
       }
       catch (exception & ex) {
         spdlog::error("[{0}] ENCRYPT FILEKEYS ERROR {1}", endpointId, ex.what());
+		(void)[v = std::move(db)]{};
         sendError(conn, 500, ex.what());
         return 500;
       }
@@ -205,7 +209,7 @@ int postEncryptEmail(struct mg_connection *conn, void *cbdata, char *dbPath, cha
 
     cJSON_AddItemToObject(response, "fileKeysEncrypted", myFileKeys);
   }
-
+  (void)[v = std::move(db)]{};
   spdlog::info("[{0}] Successful response", endpointId);
   return SendJSON(conn, response);
 }
