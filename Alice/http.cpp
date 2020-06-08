@@ -61,11 +61,15 @@ void http_init(char* dbPath, char* port, char* token) {
 	db_path = dbPath;
 	my_token = token;
 
+	string myPort = string("127.0.0.1:") + string(port);
+
 	const char* civet_options[] = {
 	  "document_root",
 	  ".",
+	  "enable_directory_listing",
+      "no",
 	  "listening_ports",
-	  port,
+	  myPort,
 	  "request_timeout_ms",
 	  "7000",
 	  "num_threads",
