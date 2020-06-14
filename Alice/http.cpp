@@ -69,7 +69,7 @@ void http_init(char* dbPath, char* port, char* token) {
 	  "enable_directory_listing",
       "no",
 	  "listening_ports",
-	  myPort,
+	  myPort.c_str(),
 	  "request_timeout_ms",
 	  "7000",
 	  "num_threads",
